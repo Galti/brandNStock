@@ -6,6 +6,10 @@ const Wrapper = styled.div`
   height: 35px;
   justify-content: flex-end;
   border-bottom: 1px solid ${(props) => props.theme.SecondaryColor};
+  
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const InfoA = styled.a`

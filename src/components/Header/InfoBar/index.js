@@ -1,23 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
 import {Wrapper, InfoA, IconSpan, InfoAForPhone} from './StyledComponents';
 
-const InfoBar = () => (
+const InfoBar = (props) => (
     <Wrapper>
-        <InfoA href="mailto:test@test.com">
+        <InfoA href={`mailto:${props.contacts.email}`}>
             <IconSpan>
                 <MdDrafts/>
             </IconSpan>
-            example@example.com
+            {props.contacts.email}
         </InfoA>
-        <InfoAForPhone href="tel:+37499554324">
+        <InfoAForPhone href={`tel:${props.contacts.phone}`}>
             <IconSpan>
                 <MdLocalPhone/>
             </IconSpan>
-            +37499554324
+            {props.contacts.phone}
         </InfoAForPhone>
     </Wrapper>
 );
+
+InfoBar.propTypes = {
+    contacts: PropTypes.object,
+};
 
 export default InfoBar;

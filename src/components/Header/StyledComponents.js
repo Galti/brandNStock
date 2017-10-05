@@ -1,22 +1,53 @@
 import styled from 'styled-components';
+import {Link as CustomLink} from '../shared-styled-components';
 
 const Wrapper = styled.header`
   width: 100%;
-  height: 160px;
   display: flex;
-  border: 1px solid red;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  background-color: ${(props) => props.theme.BackgroundWhite};
+  box-shadow: 0 4px 5px #000;
+  z-index: 100;
 `;
 
 const Content = styled.div`
-  border: 1px solid green;
   height: 100%;
   width: 100%;
   max-width: 1200px;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
+  
+  @media (max-width: 1000px) {
+    padding: 0 5px;
+  }
 `;
+
+const MenuItemMobile = styled.span`
+  width: 100%;
+  padding: 5px;
+  background-color: ${(props) => props.selected ? '#000' : ''};
+  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+`;
+
+const MenuItemMobileColor = styled.span`
+  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+`;
+
+const LogoLink = styled(CustomLink)`
+  display: none !important;
+  padding: 15px 0;
+  
+  @media (max-width: 480px) {
+    display: block !important;
+  }
+`;
+
 
 export {
     Wrapper,
     Content,
+    MenuItemMobile,
+    MenuItemMobileColor,
+    LogoLink,
 }
