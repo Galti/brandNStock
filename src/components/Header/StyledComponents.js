@@ -6,10 +6,14 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: center;
   position: sticky;
-  top: 0;
+  top: -70px;
   background-color: ${(props) => props.theme.BackgroundWhite};
   box-shadow: 0 4px 5px #000;
   z-index: 100;
+  
+  @media (max-width: 1000px) {
+    top: 0;
+  }
 `;
 
 const Content = styled.div`

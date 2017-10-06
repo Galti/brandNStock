@@ -5,14 +5,10 @@ import {Link as CustomLink} from '../../shared-styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  position: sticky;
-  top: 0;
   width: 100%;
   max-width: 1170px;
-  /* border: 1px solid red; */
   margin-top: 20px;
-  z-index: 100;
-  
+  z-index: 100 !important;
   
   @media (max-width: 1000px) {
     margin: 0;
@@ -54,6 +50,7 @@ const Tab = styled.span`
   flex-direction: column;
   justify-content: center;
   margin: 0 20px;
+  height: 30px;
   
   &:hover ${TabUnderline} {
     width: 100%;
@@ -65,9 +62,10 @@ const HamburgerButton = styled.div`
   display: none;
   align-self: center;
   position: absolute;
+  z-index: 100;
   
   @media (max-width: 1000px) {
-    display: block;
+    display: flex;
   }
 `;
 
@@ -78,7 +76,7 @@ const RightMenuButton = styled(IconButton)`
   right: 0;
   
   @media (max-width: 1000px) {
-    display: block !important;
+    display: flex !important;
   }
 `;
 
@@ -109,6 +107,7 @@ const IconSpan = styled.span`
 const Link = styled(CustomLink)`
   margin: 0 auto;
   height: 56px;
+  align-self: center;
 `;
 
 export {

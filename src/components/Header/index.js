@@ -18,18 +18,20 @@ const styles = {
     bmMenu: {
         top: '58px',
         background: '#fff',
-
         width: '100%',
         fontSize: '1.15em',
+        zIndex: '0 !important',
 
     },
     bmMorphShape: {
         top: '58px',
         fill: '#fff',
+        zIndex:0,
     },
     bmItemList: {
         top: '58px',
         padding: '15px',
+        zIndex:0,
     },
     bmOverlay: {
         top: '58px',
@@ -67,7 +69,22 @@ class Header extends React.Component {
     }
 
     handleMenuOpenClose = () => {
-        this.setState({isMenuOpen: !this.state.isMenuOpen})
+        if (!this.state.isMenuOpen) {
+            this.setState({isMenuOpen: true });
+            this.handleBodyOverflowControl(true);
+        } else {
+            this.setState({isMenuOpen: false });
+            this.handleBodyOverflowControl(false);
+        }
+
+    };
+
+    handleBodyOverflowControl = (shouldHide) => {
+        if (shouldHide) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
     };
 
     handleMenuItemClick = (menuItem) => {
@@ -85,7 +102,10 @@ class Header extends React.Component {
                     width='280px'
                     styles={styles}
                     isOpen={this.state.isMenuOpen}
-                    onStateChange={(state) => this.setState({isMenuOpen: state.isOpen})}
+                    onStateChange={(state) => {
+                        this.setState({isMenuOpen: state.isOpen});
+                        this.handleBodyOverflowControl(state.isOpen);
+                    }}
                 >
                     <LogoLink to='/'>
                         <img src={logo}/>
