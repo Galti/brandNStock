@@ -34,10 +34,6 @@ const MenuItemMobile = styled.span`
   color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
 `;
 
-const MenuItemMobileColor = styled.span`
-  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
-`;
-
 const LogoLink = styled(CustomLink)`
   display: none !important;
   padding: 15px 0;
@@ -47,11 +43,22 @@ const LogoLink = styled(CustomLink)`
   }
 `;
 
+const LeftMenuLink = styled(CustomLink)`
+  width: 100%;
+  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+  display: block;
+  
+  &:hover {
+    color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+    text-decoration: none !important;
+  }
+`;
+
 
 export {
     Wrapper,
     Content,
     MenuItemMobile,
-    MenuItemMobileColor,
     LogoLink,
+    LeftMenuLink,
 }

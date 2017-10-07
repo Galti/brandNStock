@@ -86,16 +86,17 @@ const MdMenu = styled(Menu)`
 `;
 
 const InfoA = styled.a`
-display: block;
-  color: ${(props) => props.theme.TextColorMain};
+  display: block;
+  color: ${(props) => props.theme.TextColorMain} !important;
   font-family: Lato, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  outline: none;
+  outline: none !important;
   padding: 4px 0 4px 15px;
   margin-top: 5px;
   
   &:hover {
     text-decoration: underline;
+    color: ${(props) => props.theme.TextColorMain} !important;
   }
 `;
 
@@ -108,6 +109,16 @@ const Link = styled(CustomLink)`
   margin: 0 auto;
   height: 56px;
   align-self: center;
+  font-size: ${(props) => props.theme.HeaderSize};
+  font-weight: bold;
+  color: ${(props) => props.theme.TextColorMain} !important;
+  text-decoration: none !important;
+  
+  &:hover {
+    text-decoration: none;
+    color: ${(props) => props.theme.TextColorMain};
+
+  }
 `;
 
 export {

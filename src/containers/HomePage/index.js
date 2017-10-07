@@ -4,10 +4,12 @@ import LayerRecommended from '../../components/LayerRecommended';
 
 class HomePage extends React.Component {
     render() {
-        return(
+        return (
             <div>
-                <MainSlider/>
-                <LayerRecommended />
+                <div style={{width: '100%', marginBottom: '30px', marginTop: '5px'}}>
+                    <MainSlider/>
+                </div>
+                <LayerRecommended/>
 
             </div>
         )

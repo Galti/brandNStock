@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  outline: none;
   font-size: 16px;
 }
 
@@ -14,4 +15,15 @@ body {
   padding: 0;
   font-family: sans-serif;
   min-width: 300px;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: #fff;
 }

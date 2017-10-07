@@ -9,7 +9,13 @@ import {
 import AboutUs from './components/AboutUs';
 import HomePage from'./containers/HomePage';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
+
+const contacts = {
+    phone: '+37499887766',
+    email: 'example@example.org',
+};
 
 class App extends Component {
     render() {
@@ -21,9 +27,14 @@ class App extends Component {
                             <div>
                                 <Header
                                     firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}
+                                    contacts={contacts}
                                 />
                                 <Route exact path="/" component={HomePage}/>
                                 <Route path="/about-us" component={AboutUs}/>
+
+                                <Footer
+                                    contacts={contacts}
+                                />
                             </div>
                         </Router>
                     </div>

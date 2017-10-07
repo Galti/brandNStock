@@ -20,6 +20,7 @@ const InfoA = styled.a`
   
   &:hover {
     text-decoration: underline;
+    color: ${(props) => props.theme.TextColorMain};
   }
 `;
 

@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {bubble as MenuMobile} from 'react-burger-menu';
-import {Wrapper, Content, MenuItemMobile, MenuItemMobileColor, LogoLink} from './StyledComponents';
+import {
+    Wrapper,
+    Content,
+    MenuItemMobile,
+    LogoLink,
+    LeftMenuLink,
+} from './StyledComponents';
 import InfoBar from './InfoBar';
 import Menu from './Menu';
-import {Link} from '../shared-styled-components';
 import logo from '../../resources/images/logo-dark.png';
 
 const styles = {
@@ -26,12 +31,12 @@ const styles = {
     bmMorphShape: {
         top: '58px',
         fill: '#fff',
-        zIndex:0,
+        zIndex: 0,
     },
     bmItemList: {
         top: '58px',
         padding: '15px',
-        zIndex:0,
+        zIndex: 0,
     },
     bmOverlay: {
         top: '58px',
@@ -54,11 +59,6 @@ const menuItems = [
     },
 ];
 
-const contacts = {
-    phone: '+37499887766',
-    email: 'example@example.org',
-};
-
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -68,12 +68,26 @@ class Header extends React.Component {
         }
     }
 
+    componentWillMount() {
+        console.log(window.location.href);
+        console.log(this.props.firstLoadedRoute);
+        // this.setState({
+        //     selected: window.location.href.replace(/(.+\w\/)(.+)/,"/$2")
+        // })
+        // if (window.location.href && this.state.isMenuOpen) {
+        //     setTimeout(() => {
+        //         this.handleMenuOpenClose();
+        //         console.log('this.props.firstLoadedRoute === window.location && this.state.isMenuOpen')
+        //     }, 1000);
+        // }
+    }
+
     handleMenuOpenClose = () => {
         if (!this.state.isMenuOpen) {
-            this.setState({isMenuOpen: true });
+            this.setState({isMenuOpen: true});
             this.handleBodyOverflowControl(true);
         } else {
-            this.setState({isMenuOpen: false });
+            this.setState({isMenuOpen: false});
             this.handleBodyOverflowControl(false);
         }
 
@@ -120,18 +134,16 @@ class Header extends React.Component {
                                     this.handleMenuItemClick(menuItem);
                                 }}
                             >
-                                <Link to={menuItem.link}>
-                                    <MenuItemMobileColor selected={this.state.selected === menuItem.link}>
-                                        {menuItem.name}
-                                    </MenuItemMobileColor>
-                                </Link>
+                                <LeftMenuLink to={menuItem.link} selected={this.state.selected === menuItem.link}>
+                                    {menuItem.name}
+                                </LeftMenuLink>
                             </MenuItemMobile>
                         )
                     }
                 </MenuMobile>
                 <Content>
                     <InfoBar
-                        contacts={contacts}
+                        contacts={this.props.contacts}
                     />
                     <Menu
                         onMenuOpenClose={this.handleMenuOpenClose}
@@ -139,7 +151,7 @@ class Header extends React.Component {
                         menuItems={menuItems}
                         selected={this.state.selected}
                         isMenuOpen={this.state.isMenuOpen}
-                        contacts={contacts}
+                        contacts={this.props.contacts}
                     />
                 </Content>
             </Wrapper>
@@ -149,6 +161,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
     firstLoadedRoute: PropTypes.string,
+    contacts: PropTypes.object,
 };
 
 export default Header;
