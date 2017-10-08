@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 15px;
   background-color: ${(props) => props.theme.TextColorMain};
   color: ${(props) => props.theme.BackgroundWhite};
+  padding: 0 15px;
 `;
 
 const AboutUsTitle = styled.div`
@@ -13,18 +13,37 @@ const AboutUsTitle = styled.div`
   text-align: center;
 `;
 
+const ContactsTitle = AboutUsTitle.extend`
+  font-size: 22px;
+  padding: 15px 0;
+  text-align: left;
+  
+  @media (max-width: ${(props) => props.theme.BootstrapSizes.xs}) {
+    text-align: center;
+  }
+`;
+
 
 const Copyright = styled.div`
   color: ${(props) => props.theme.SecondaryColor};
   text-align: center;
 `;
 
-const Contacts = styled.a`
-  
+const WrapperFooterLogo = styled.div`
+  position: absolute !important;
+  display: flex;
+  justify-content: center;
+  float: left;
+  height: 188px;
+  width: 100%;
 `;
+
+
 
 export {
   Wrapper,
   Copyright,
   AboutUsTitle,
+  WrapperFooterLogo,
+  ContactsTitle,
 }

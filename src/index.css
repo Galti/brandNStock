@@ -1,6 +1,11 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: Propagan;
+  src: url(resources/fonts/PROPAGAN.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

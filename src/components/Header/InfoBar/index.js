@@ -2,10 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
+import viberIcon from '../../../resources/images/viber_icon.png'
+import whatsUpIcon from '../../../resources/images/whatsapp-icon.svg';
 import {Wrapper, InfoA, IconSpan, InfoAForPhone} from './StyledComponents';
 
 const InfoBar = (props) => (
     <Wrapper>
+        {/*<InfoA href={`mailto:${props.contacts.email}`}>*/}
+            {/*<IconSpan>*/}
+                {/*<img src={whatsUpIcon} style={{ height: '28px' }}/>*/}
+            {/*</IconSpan>*/}
+            {/*<IconSpan>*/}
+                {/*<img src={viberIcon} style={{ height: '32px' }}/>*/}
+            {/*</IconSpan>*/}
+            {/*{props.contacts.phone}*/}
+        {/*</InfoA>*/}
         <InfoA href={`mailto:${props.contacts.email}`}>
             <IconSpan>
                 <MdDrafts/>

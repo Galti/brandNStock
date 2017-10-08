@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   max-width: 1170px;
   margin-top: 20px;
   z-index: 100 !important;
+  /* border: 1px solid red; */
   
   @media (max-width: 1000px) {
     margin: 0;
@@ -19,6 +20,7 @@ const Logo = styled.div`
   display: inline-flex;
   align-items: center;
   height: 56px;
+  /* border: 1px solid green; */
   
   @media (max-width: 480px) {
     display: none;
@@ -110,7 +112,7 @@ const Link = styled(CustomLink)`
   height: 56px;
   align-self: center;
   font-size: ${(props) => props.theme.HeaderSize};
-  font-weight: bold;
+  font-family: 'Propagan', sans-serif;
   color: ${(props) => props.theme.TextColorMain} !important;
   text-decoration: none !important;
   

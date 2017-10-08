@@ -17,7 +17,7 @@ import {
     IconSpan,
     Link,
 } from './StyledComponents';
-import logo from '../../../resources/images/logo-dark.png';
+import logo from '../../../resources/images/logo-light.png';
 
 class Menu extends React.Component {
     state = {
@@ -42,8 +42,8 @@ class Menu extends React.Component {
                             <DeleteIcon style={{width: '30px', height: '30px'}}/>
                         </IconButton>
                     </HamburgerButton>
-                    <Link to='/'>
-                        <Logo><img src={logo} height='36px'/></Logo>
+                    <Link to='/' style={{ zIndex: 100 }}>
+                        <Logo><img src={logo} height='56px'/></Logo>
                     </Link>
                     <Tabs>
                         {

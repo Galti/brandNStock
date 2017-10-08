@@ -5,6 +5,8 @@ import {
     Wrapper,
     AboutUsTitle,
     Copyright,
+    WrapperFooterLogo,
+    ContactsTitle,
 } from './StyledComponents';
 import LogoLight from '../../resources/images/logo-light.png';
 
@@ -18,39 +20,33 @@ class Footer extends React.Component {
     render() {
         return (
             <Wrapper>
+                <WrapperFooterLogo>
+                    <img src={LogoLight} style={{width: '100%', marginTop: '-15px', opacity: '0.5'}}/>
+                </WrapperFooterLogo>
                 <Row>
-                    <Col xs={12} sm={6} md={4}
-                         style={{
-                             display: 'flex',
-                             alignItems: 'center',
-                             justifyContent: 'center',
-                             height: '150px'
-                         }}
-                    >
-                        <img src={LogoLight} />
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
+                    <Col xs={12} sm={6} md={9}>
                         <AboutUsTitle>What We Do?</AboutUsTitle>
-                        <p>
-                            Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
-                        </p>
+                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
+                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
+                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
+                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
                     </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <AboutUsTitle>
+                    <Col xs={12} sm={6} md={3} style={{ padding: '0 15px'}}>
+                        <ContactsTitle>
                             Contacts
-                        </AboutUsTitle>
+                        </ContactsTitle>
                         <IconSpan>
                             <MdDrafts/>
                         </IconSpan>
                         <a href={`mailto:${this.props.contacts.email}`}>{this.props.contacts.email}</a>
-                        <br />
+                        <br/>
                         <IconSpan>
                             <MdLocalPhone/>
                         </IconSpan>
-                        <a href={`mailto:${this.props.contacts.email}`}>{this.props.contacts.phone}</a>
+                        <a href={`tel:${this.props.contacts.phone}`}>{this.props.contacts.phone}</a>
                     </Col>
                 </Row>
-                <Row style={{ padding: '20px 0'}}>
+                <Row style={{padding: '20px 0'}}>
                     <Copyright>Intense Real Estate © 2017.</Copyright>
                     <Copyright>Made with Love by T&G LLC.</Copyright>
                 </Row>

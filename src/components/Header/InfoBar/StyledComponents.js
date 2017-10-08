@@ -16,7 +16,8 @@ const InfoA = styled.a`
   color: ${(props) => props.theme.TextColorMain};
   margin: 0 20px;
   font-family: Lato, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
   
   &:hover {
     text-decoration: underline;

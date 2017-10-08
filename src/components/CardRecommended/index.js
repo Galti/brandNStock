@@ -16,7 +16,7 @@ class CardRecommended extends React.Component {
         return (
             <Wrapper>
                 <Image src={image}/>
-                <Link to='/'>Pull and Bear</Link>
+                <Link to='/'>AVA Nob Hill</Link>
                 <Price>$1888</Price>
                 <Quantity>Minimum quantity 1000piece</Quantity>
                 <p>AVA Nob Hill includes studios and 1 and 2 bedroom apartments that feature an urban-inspired design

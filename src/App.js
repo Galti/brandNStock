@@ -13,8 +13,8 @@ import Footer from './components/Footer';
 import './App.css';
 
 const contacts = {
-    phone: '+37499887766',
-    email: 'example@example.org',
+    phone: '+79602570045',
+    email: 'brandandstock@gmail.com',
 };
 
 class App extends Component {

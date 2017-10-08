@@ -47,6 +47,7 @@ const LeftMenuLink = styled(CustomLink)`
   width: 100%;
   color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
   display: block;
+  font-family: 'Propagan', sans-serif;
   
   &:hover {
     color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};

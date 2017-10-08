@@ -10,7 +10,7 @@ import {
 } from './StyledComponents';
 import InfoBar from './InfoBar';
 import Menu from './Menu';
-import logo from '../../resources/images/logo-dark.png';
+import logo from '../../resources/images/logo-light.png';
 
 const styles = {
     bmBurgerButton: {
@@ -19,24 +19,22 @@ const styles = {
     bmCrossButton: {
         display: 'none',
     },
-    bmMenuWrap: {},
+    bmMenuWrap: {
+    },
     bmMenu: {
         top: '58px',
         background: '#fff',
         width: '100%',
         fontSize: '1.15em',
-        zIndex: '0 !important',
 
     },
     bmMorphShape: {
         top: '58px',
         fill: '#fff',
-        zIndex: 0,
     },
     bmItemList: {
         top: '58px',
         padding: '15px',
-        zIndex: 0,
     },
     bmOverlay: {
         top: '58px',
@@ -46,7 +44,7 @@ const styles = {
 
 const menuItems = [
     {
-        name: 'Товары',
+        name: 'Бренды',
         link: '/products',
     },
     {
@@ -71,6 +69,11 @@ class Header extends React.Component {
     componentWillMount() {
         console.log(window.location.href);
         console.log(this.props.firstLoadedRoute);
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1000 && this.state.isMenuOpen){
+                this.handleMenuOpenClose();
+            }
+        })
         // this.setState({
         //     selected: window.location.href.replace(/(.+\w\/)(.+)/,"/$2")
         // })
@@ -110,6 +113,8 @@ class Header extends React.Component {
 
     render() {
         console.log(this.state.selected);
+        styles.bmMenuWrap.marginLeft = this.state.isMenuOpen ? '0' : '-200px';
+        styles.bmOverlay.opacity = this.state.isMenuOpen ? '1' : '0';
         return (
             <Wrapper>
                 <MenuMobile
@@ -122,7 +127,7 @@ class Header extends React.Component {
                     }}
                 >
                     <LogoLink to='/'>
-                        <img src={logo}/>
+                        <img src={logo} style={{ height: '56px'}}/>
                     </LogoLink>
                     {
                         menuItems.map((menuItem, index) =>
