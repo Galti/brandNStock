@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Title, HorizontalLine, Wrapper} from './StyledComponents.'
 
 
-export default class TitleLayer extends React.Component {
+class TitleLayer extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -22,3 +22,5 @@ export default class TitleLayer extends React.Component {
 TitleLayer.propTypes = {
     text: PropTypes.string,
 };
+
+export default TitleLayer;

@@ -8,7 +8,7 @@ const theme = {
 
 
     // Font Properties
-    HeaderSize: '20px', // isn't used yet
+    HeaderSize: '20px',
     LayerTitleSize: '38px',
     LayerTitleSizeMobile: '32px',
     LayerTitleFontFamily: '"Montserrat", sans-serif',

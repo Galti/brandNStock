@@ -2,33 +2,43 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 @font-face {
-  font-family: Propagan;
-  src: url(resources/fonts/PROPAGAN.ttf);
+    font-family: Propagan;
+    src: url(resources/fonts/PROPAGAN.ttf);
+}
+
+@font-face {
+    font-family: "Majestic X";
+    src: url('./resources/fonts/8580.ttf');
+}
+
+@font-face {
+    font-family: Liana;
+    src: url(resources/fonts/9099.ttf);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  outline: none;
-  font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  min-width: 300px;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    min-width: 300px;
+    overflow-x: hidden;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
 }
 
 a:hover {
-  color: #fff;
+    color: #fff;
 }

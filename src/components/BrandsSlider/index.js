@@ -16,9 +16,12 @@ import arrow from '../../resources/images/arrow-right.svg';
 const settings = {
     infinite: true,
     speed: 500,
-    // slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     arrows: true,
+    lazyLoad: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     variableWidth: true
 };
 

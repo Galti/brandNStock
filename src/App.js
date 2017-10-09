@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import HomePage from'./containers/HomePage';
+import ContactsPage from'./containers/ContactsPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
@@ -29,8 +30,9 @@ class App extends Component {
                                     firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}
                                     contacts={contacts}
                                 />
-                                <Route exact path="/" component={HomePage}/>
+                                <Route exact path="/" component={() => <HomePage contacts={contacts} />} />
                                 <Route path="/about-us" component={AboutUs}/>
+                                <Route path="/contacts" component={() => <ContactsPage contacts={contacts}/> }/>
 
                                 <Footer
                                     contacts={contacts}

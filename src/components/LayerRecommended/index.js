@@ -1,38 +1,97 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Product from '../../models/Product';
-import CardRecommended from '../CardRecommended';
+import Card3Column from '../Card3Column';
+import Card2Column from '../Card2Column';
 import TitleLayer from '../../components/TitleLayer';
 import {
     Wrapper,
     Content,
     Col,
 } from './StyledComponents';
+import {Row} from 'react-bootstrap';
+// card3Columns IMAGES
+import accessories from '../../resources/images/recommended/card3Columns/accessories.jpg';
+import children from '../../resources/images/recommended/card3Columns/children.jpg';
+import secondHand from '../../resources/images/recommended/card3Columns/second-hand.jpg';
+// card3Columns IMAGES
+import brandStock from '../../resources/images/recommended/card2Columns/brand-stock.jpg';
+import womenStock from '../../resources/images/recommended/card2Columns/women-stock.jpg';
+// import image from '../../resources/images/home-img-05-370x250.jpg';
+
+const card2Columns = [
+    {
+        image: brandStock,
+        category: 'Брендовый сток',
+        price: 'до 17 €/ед.',
+        description: '',
+    },
+    {
+        image: womenStock,
+        category: 'Женский сток',
+        price: 'до 10 €/ед.',
+        description: '',
+    },
+
+];
+
+const card3Columns = [
+    {
+        image: secondHand,
+        category: 'Брендовый секонд хенд',
+        price: 'до 3 €/кг.',
+        description: '',
+    },
+    {
+        image: children,
+        category: 'Детский сток',
+        price: 'до 7 €/ед.',
+        description: '',
+    },
+    {
+        image: accessories,
+        category: 'Аксессуары',
+        price: 'до 6 €/ед.',
+        description: '',
+    },
+
+];
+
 
 class LayerRecommended extends React.Component {
     render() {
         return (
             <Wrapper>
-                <TitleLayer text='Recommended Products'/>
+                <TitleLayer text='Актуальные предложения'/>
                 <Content>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <CardRecommended/>
-                    </Col>
+                    <Row>
+                        {
+                            card2Columns.map((item, index) => (
+                                <Col xs={12} sm={6} md={6} key={`${index.toString()}card2Columns`}>
+                                    <Card2Column
+                                        image={item.image}
+                                        category={item.category}
+                                        price={item.price}
+                                        description={item.description}
+                                        email={this.props.contacts.email}
+                                    />
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                    {
+                        card3Columns.map((item, index) => (
+                            <Col xs={12} sm={6} md={4} key={`${index.toString()}card3Columns`}>
+                                <Card3Column
+                                    image={item.image}
+                                    category={item.category}
+                                    price={item.price}
+                                    description={item.description}
+                                    email={this.props.contacts.email}
+                                />
+                            </Col>
+                        ))
+                    }
                 </Content>
             </Wrapper>
         )
@@ -40,7 +99,7 @@ class LayerRecommended extends React.Component {
 }
 
 LayerRecommended.propTypes = {
-    products: PropTypes.arrayOf(Product),
+    contacts: PropTypes.object,
 };
 
 export default LayerRecommended;

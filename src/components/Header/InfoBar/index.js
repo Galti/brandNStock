@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
-import viberIcon from '../../../resources/images/viber_icon.png'
-import whatsUpIcon from '../../../resources/images/whatsapp-icon.svg';
 import {Wrapper, InfoA, IconSpan, InfoAForPhone} from './StyledComponents';
 
 const InfoBar = (props) => (

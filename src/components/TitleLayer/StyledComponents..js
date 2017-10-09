@@ -14,6 +14,7 @@ const Title = styled.span`
 	font-weight: bold;
 	text-align: center;
 	color: ${(props) => props.theme.TextColorMain};
+	text-transform: uppercase;
 	
 	@media (max-width: 480px) {
       font-size: ${(props) => props.theme.LayerTitleSizeMobile};

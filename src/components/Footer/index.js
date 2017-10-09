@@ -25,15 +25,15 @@ class Footer extends React.Component {
                 </WrapperFooterLogo>
                 <Row>
                     <Col xs={12} sm={6} md={9}>
-                        <AboutUsTitle>What We Do?</AboutUsTitle>
-                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
-                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
-                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
-                        Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.
+                        <AboutUsTitle>Что Мы Делаем?</AboutUsTitle>
+                        Мы предлагаем вашему вниманию брендовую одежду и аксессуары от ведущих итальянских
+                        производителей,
+                        которую вы сможете приобрести оптом по самым выгодным ценам. Готовы ответить на все ваши вопросы
+                        круглосуточно в любое удобное для вас время!
                     </Col>
-                    <Col xs={12} sm={6} md={3} style={{ padding: '0 15px'}}>
+                    <Col xs={12} sm={6} md={3} style={{padding: '0 15px'}}>
                         <ContactsTitle>
-                            Contacts
+                            Кантакты
                         </ContactsTitle>
                         <IconSpan>
                             <MdDrafts/>
@@ -47,8 +47,8 @@ class Footer extends React.Component {
                     </Col>
                 </Row>
                 <Row style={{padding: '20px 0'}}>
-                    <Copyright>Intense Real Estate © 2017.</Copyright>
-                    <Copyright>Made with Love by T&G LLC.</Copyright>
+                    <Copyright>Copyright © 2017 Brand and Stock.</Copyright>
+                    <Copyright>Made with Love by <b style={{ color: '#fff'}}><i>Fabrika</i></b>.</Copyright>
                 </Row>
             </Wrapper>
         )
