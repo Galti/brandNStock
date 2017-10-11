@@ -8,11 +8,10 @@ const Wrapper = styled.div`
 `;
 
 const SliderItem = styled.div`
-  padding: 0 5px;
+  padding: 0 15px;
   height: 150px;
   width: 200px;
   display: flex;
-  object-fit: cover !important;
 `;
 
 const ArrowWrapper = styled.div`
@@ -24,9 +23,9 @@ const ArrowWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  max-height: 150px;
   height: 100%;
-  max-width: 200px;
+  width: 100%;
+  object-fit: contain;
 `;
 
 const ArrowNext = styled.img`

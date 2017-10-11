@@ -33,7 +33,7 @@ class Footer extends React.Component {
                     </Col>
                     <Col xs={12} sm={6} md={3} style={{padding: '0 15px'}}>
                         <ContactsTitle>
-                            Кантакты
+                            Контакты
                         </ContactsTitle>
                         <IconSpan>
                             <MdDrafts/>

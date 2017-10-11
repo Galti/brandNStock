@@ -45,7 +45,7 @@ const styles = {
 const menuItems = [
     {
         name: 'Бренды',
-        link: '/products',
+        link: '/brands',
     },
     {
         name: 'О Нас',
@@ -67,22 +67,28 @@ class Header extends React.Component {
     }
 
     componentWillMount() {
-        console.log(window.location.href);
-        console.log(this.props.firstLoadedRoute);
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 1000 && this.state.isMenuOpen){
                 this.handleMenuOpenClose();
             }
-        })
-        // this.setState({
-        //     selected: window.location.href.replace(/(.+\w\/)(.+)/,"/$2")
-        // })
-        // if (window.location.href && this.state.isMenuOpen) {
-        //     setTimeout(() => {
-        //         this.handleMenuOpenClose();
-        //         console.log('this.props.firstLoadedRoute === window.location && this.state.isMenuOpen')
-        //     }, 1000);
-        // }
+        });
+    }
+
+    componentWillUpdate() {
+        const currentPage = window.location.href.replace(/(.+\w\/)(.+)/,"/$2");
+
+        if (this.state.selected !== currentPage) {
+            if (currentPage === '/#/') {
+                this.setState({
+                    selected: currentPage,
+                    isMenuOpen: false
+                })
+            } else {
+                this.setState({
+                    selected: currentPage
+                })
+            }
+        }
     }
 
     handleMenuOpenClose = () => {
@@ -132,14 +138,14 @@ class Header extends React.Component {
                     {
                         menuItems.map((menuItem, index) =>
                             <MenuItemMobile
-                                selected={this.state.selected === menuItem.link}
+                                selected={this.state.selected === `/#${menuItem.link}`}
                                 key={index.toString()}
                                 onClick={() => {
                                     this.handleMenuOpenClose();
                                     this.handleMenuItemClick(menuItem);
                                 }}
                             >
-                                <LeftMenuLink to={menuItem.link} selected={this.state.selected === menuItem.link}>
+                                <LeftMenuLink to={menuItem.link} selected={this.state.selected === `/#${menuItem.link}`}>
                                     {menuItem.name}
                                 </LeftMenuLink>
                             </MenuItemMobile>

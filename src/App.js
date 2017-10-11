@@ -5,8 +5,10 @@ import {ThemeProvider} from 'styled-components';
 import {
     BrowserRouter as Router,
     Route,
+    HashRouter
 } from 'react-router-dom';
-import AboutUs from './components/AboutUs';
+import AboutUsPage from './containers/AboutUsPage';
+import BrandsPage from './containers/BrandsPage';
 import HomePage from'./containers/HomePage';
 import ContactsPage from'./containers/ContactsPage';
 import Header from './components/Header';
@@ -24,21 +26,23 @@ class App extends Component {
             <div>
                 <ThemeProvider theme={theme}>
                     <div>
-                        <Router>
+                        <HashRouter>
                             <div>
                                 <Header
                                     firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}
                                     contacts={contacts}
                                 />
+
                                 <Route exact path="/" component={() => <HomePage contacts={contacts} />} />
-                                <Route path="/about-us" component={AboutUs}/>
+                                <Route exact path="/about-us" component={AboutUsPage}/>
                                 <Route path="/contacts" component={() => <ContactsPage contacts={contacts}/> }/>
+                                <Route path="/brands" component={BrandsPage}/>
 
                                 <Footer
                                     contacts={contacts}
                                 />
                             </div>
-                        </Router>
+                        </HashRouter>
                     </div>
                 </ThemeProvider>
             </div>

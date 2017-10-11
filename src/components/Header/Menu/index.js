@@ -51,9 +51,10 @@ class Menu extends React.Component {
                                 <Tab
                                     key={index.toString()}
                                     onClick={() => this.props.onMenuItemClick(menuItem)}
+                                    index={index}
                                 >
                                     <Link to={menuItem.link}>{menuItem.name}</Link>
-                                    <TabUnderline selected={this.props.selected === menuItem.link}/>
+                                    <TabUnderline selected={this.props.selected === `/#${menuItem.link}`}/>
                                 </Tab>
                             ))
                         }
