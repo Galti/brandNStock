@@ -78,6 +78,7 @@ class Header extends React.Component {
         const currentPage = window.location.href.replace(/(.+\w\/)(.+)/,"/$2");
 
         if (this.state.selected !== currentPage) {
+            window.scrollTo(0, 0);
             if (currentPage === '/#/') {
                 this.setState({
                     selected: currentPage,

@@ -9,14 +9,15 @@ import {
     BrandName,
     Characteristics,
     AgePriceSpan,
+    MinorInfoWrapper,
 } from './StyledComponents';
 import PageHeader from '../PageHeader';
+import bgImage from '../../resources/images/brands-parallax-bgImage.jpg'
 
 class Brands extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePage: 1,
             brands: this.props.brands.map((brand) => {
                 return {
                     isHovered: false,
@@ -27,11 +28,22 @@ class Brands extends React.Component {
 
     }
 
-    handleSelect = (eventKey) => {
+    componentWillReceiveProps(nextProps) {
         this.setState({
-            activePage: eventKey
-        });
-    };
+            brands: nextProps.brands.map((brand) => {
+                return {
+                    isHovered: false,
+                    ...brand
+                }
+            })
+        })
+    }
+
+    // handleSelect = (eventKey) => {
+    //     this.setState({
+    //         activePage: eventKey
+    //     });
+    // };
 
     handleItemMouseEnter = (name) => {
         const newBrands = this.state.brands.map((brand) =>
@@ -55,7 +67,7 @@ class Brands extends React.Component {
             <div>
                 <PageHeader
                     text='Brands'
-                    bgImage='http://i.huffpost.com/gen/1605280/images/o-CLOTHING0205-facebook.jpg'
+                    bgImage={bgImage}
                 >
                 </PageHeader>
                 <Grid style={{padding: 0}}>
@@ -63,7 +75,8 @@ class Brands extends React.Component {
                         this.state.brands.map((brand, index) => {
                             if ([1, 2, 7].some((num) => index === num)) {
                                 return (
-                                    <Col xs={12} sm={6} md={8} style={{marginTop: '20px'}} key={`colBrands${index.toString()}`}>
+                                    <Col xs={12} sm={6} md={8} style={{marginTop: '20px'}}
+                                         key={`colBrands${index.toString()}`}>
                                         <div
                                             onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
                                             onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
@@ -74,27 +87,42 @@ class Brands extends React.Component {
                                                 <BrandName>
                                                     {brand.name}
                                                 </BrandName>
-                                                <Row>
-                                                    <Col md={6}>
-                                                        <AgePriceSpan>
-                                                            <Glyphicon
-                                                                glyph="glyphicon glyphicon-user"
-                                                            />
-                                                            {brand.age}
-                                                        </AgePriceSpan>
-                                                    </Col>
-                                                    <Col md={6}>
-                                                        <AgePriceSpan>
-                                                            <Glyphicon
-                                                                glyph="glyphicon glyphicon-eur"
-                                                                style={{display: 'inline'}}
-                                                            />
-                                                            {brand.price}
-                                                        </AgePriceSpan>
-                                                    </Col>
-                                                </Row>
+                                                <MinorInfoWrapper>
+                                                    <AgePriceSpan>
+                                                        {
+                                                            brand.age ?
+                                                                (
+                                                                    <span>
+                                                                    <Glyphicon
+                                                                        glyph="glyphicon glyphicon-user"
+                                                                    />
+                                                                        {brand.age}
+                                                                    </span>
+                                                                )
+                                                                :
+                                                                ''
+                                                        }
+                                                    </AgePriceSpan>
+                                                    <AgePriceSpan>
+                                                        {
+                                                            brand.price ?
+                                                                (
+                                                                    <span>
+                                                                    <Glyphicon
+                                                                        glyph="glyphicon glyphicon-eur"
+                                                                        style={{display: 'inline'}}
+                                                                    />
+                                                                        {brand.price}
+                                                                    </span>
+                                                                )
+                                                                :
+                                                                ''
+                                                        }
+                                                    </AgePriceSpan>
+                                                </MinorInfoWrapper>
                                                 <Characteristics>
-                                                    #{brand.typology} #{brand.gender}
+                                                    <div>{brand.typology ? `#${brand.typology}` : ''}</div>
+                                                    <div>{brand.gender ? `#${brand.gender}` : ''}</div>
                                                 </Characteristics>
                                             </InfoOverlay>
                                             <ImageSmall src={brand.image}/>
@@ -114,27 +142,42 @@ class Brands extends React.Component {
                                                 <BrandName>
                                                     {brand.name}
                                                 </BrandName>
-                                                <Row>
-                                                    <Col md={6}>
-                                                        <AgePriceSpan>
-                                                            <Glyphicon
-                                                                glyph="glyphicon glyphicon-user"
-                                                            />
-                                                            {brand.age}
-                                                        </AgePriceSpan>
-                                                    </Col>
-                                                    <Col md={6}>
-                                                        <AgePriceSpan>
-                                                            <Glyphicon
-                                                                glyph="glyphicon glyphicon-eur"
-                                                                style={{display: 'inline'}}
-                                                            />
-                                                            {brand.price}
-                                                        </AgePriceSpan>
-                                                    </Col>
-                                                </Row>
+                                                <MinorInfoWrapper>
+                                                    <AgePriceSpan>
+                                                        {
+                                                            brand.age ?
+                                                                (
+                                                                    <span>
+                                                                    <Glyphicon
+                                                                        glyph="glyphicon glyphicon-user"
+                                                                    />
+                                                                        {brand.age}
+                                                                    </span>
+                                                                )
+                                                                :
+                                                                ''
+                                                        }
+                                                    </AgePriceSpan>
+                                                    <AgePriceSpan>
+                                                        {
+                                                            brand.price ?
+                                                                (
+                                                                    <span>
+                                                                    <Glyphicon
+                                                                        glyph="glyphicon glyphicon-eur"
+                                                                        style={{display: 'inline'}}
+                                                                    />
+                                                                        {brand.price}
+                                                                    </span>
+                                                                )
+                                                                :
+                                                                ''
+                                                        }
+                                                    </AgePriceSpan>
+                                                </MinorInfoWrapper>
                                                 <Characteristics>
-                                                    #{brand.typology} #{brand.gender}
+                                                    <div>{brand.typology ? `#${brand.typology}` : ''}</div>
+                                                    <div>{brand.gender ? `#${brand.gender}` : ''}</div>
                                                 </Characteristics>
                                             </InfoOverlay>
                                             <ImageSmall src={brand.image}/>
@@ -148,9 +191,9 @@ class Brands extends React.Component {
                 <PaginationContainer>
                     <Pagination
                         bsSize="medium"
-                        items={5}
-                        activePage={this.state.activePage}
-                        onSelect={this.handleSelect}/>
+                        items={this.props.pagesCount}
+                        activePage={this.props.paginationActivePage}
+                        onSelect={(eventKey) => this.props.onPaginationRouteChange(eventKey)}/>
                 </PaginationContainer>
             </div>
         )
@@ -158,7 +201,10 @@ class Brands extends React.Component {
 }
 
 Brands.propTypes = {
-    brands: PropTypes.arrayOf(Brand)
+    brands: PropTypes.arrayOf(Brand),
+    pagesCount: PropTypes.number,
+    paginationActivePage: PropTypes.number,
+    onPaginationRouteChange: PropTypes.func,
 };
 
 export default Brands;

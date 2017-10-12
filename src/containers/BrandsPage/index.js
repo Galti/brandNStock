@@ -92,11 +92,29 @@ const demoBrandsInfo = [
 ];
 
 class BrandsPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            paginationRouteNumber: 1,
+        }
+    }
+
+    handleChangePagination = (routeNumber) => {
+        console.log(routeNumber);
+        window.scrollTo(600, 150);
+        this.setState({
+            paginationRouteNumber: routeNumber,
+        });
+    };
+
     render() {
         return(
             <div>
                 <Brands
-                    brands={brands[0]}
+                    brands={brands[Number(this.state.paginationRouteNumber) - 1]}
+                    pagesCount={brands.length}
+                    paginationActivePage={this.state.paginationRouteNumber}
+                    onPaginationRouteChange={this.handleChangePagination}
                 />
             </div>
         )
