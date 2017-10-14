@@ -22,12 +22,12 @@ import Maelie from './maelie.svg';
 import NIKE from './NIKE.svg';
 import PhilippPlein from './philipp-plein.svg';
 import POURMOI from './POUR MOI.svg';
-import QuisQuis from './quis quis.svg';
+// import QuisQuis from './quis quis.svg';
 import RobertoCavalli from './roberto_cavalli.svg';
-import RUBACUORI from './RUBACUORI.svg';
-import Simonetta from './Simonetta.svg';
-import StellaMcCartney from './Stella_McCartney.svg';
-import TwoPlay from './two play.svg';
+// import RUBACUORI from './RUBACUORI.svg';
+// import Simonetta from './Simonetta.svg';
+// import StellaMcCartney from './Stella_McCartney.svg';
+// import TwoPlay from './two play.svg';
 
 import ABOUTME from './ABOUT ME.svg';
 import AGATARUIZDELAPRADA from './AGATA-RUIZ-DE-LA-PRADA.svg';

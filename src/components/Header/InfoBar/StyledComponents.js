@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import SearchIconLink from '../../../resources/images/seach-icon.png';
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: 35px;
-  justify-content: flex-end;
   border-bottom: 1px solid ${(props) => props.theme.SecondaryColor};
   
   @media (max-width: 1000px) {
@@ -34,11 +34,25 @@ const IconSpan = styled.span`
   color: ${(props) => props.theme.SecondaryColor};
 `;
 
-
+const SearchBar = styled.input`
+  width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(${SearchIconLink});
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+`;
 
 export {
   Wrapper,
   InfoA,
   InfoAForPhone,
   IconSpan,
+    SearchBar,
 }

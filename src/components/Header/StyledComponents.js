@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link as CustomLink} from '../shared-styled-components';
+import Dialog, { DialogTitle } from 'material-ui/Dialog';
 
 const Wrapper = styled.header`
   width: 100%;
@@ -55,6 +56,11 @@ const LeftMenuLink = styled(CustomLink)`
   }
 `;
 
+const SearchWindowWrapper = styled(Dialog)`
+`;
+
+
+
 
 export {
     Wrapper,
@@ -62,4 +68,5 @@ export {
     MenuItemMobile,
     LogoLink,
     LeftMenuLink,
+    SearchWindowWrapper,
 }

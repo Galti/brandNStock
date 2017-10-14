@@ -39,12 +39,6 @@ class Brands extends React.Component {
         })
     }
 
-    // handleSelect = (eventKey) => {
-    //     this.setState({
-    //         activePage: eventKey
-    //     });
-    // };
-
     handleItemMouseEnter = (name) => {
         const newBrands = this.state.brands.map((brand) =>
             brand.name === name ? Object.assign({}, brand, {isHovered: true}) : Object.assign({}, brand, {isHovered: false}));
@@ -131,7 +125,9 @@ class Brands extends React.Component {
                                 )
                             } else {
                                 return (
-                                    <Col xs={12} sm={6} md={4} style={{marginTop: '20px'}}>
+                                    <Col xs={12} sm={6} md={4} style={{marginTop: '20px'}}
+                                         key={`colBrands${index.toString()}`}
+                                    >
                                         <div
                                             onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
                                             onMouseLeave={() => this.handleItemMouseLeave(brand.name)}

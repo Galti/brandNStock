@@ -17,13 +17,20 @@ const Card3Column = (props) => (
     <Wrapper>
         <Image src={props.image}/>
         <div> {/* this div combine below components */}
-            <a href={`mailto:${props.email}?Subject=${props.category}`} target="_top">
-                <Button style={{right: '0', position: 'absolute', marginTop: '10px'}}>
-                    <MdDrafts
-                        style={{height: '40px', width: '40px'}}
-                    />
-                </Button>
-            </a>
+            {
+                props.email ?
+                    (
+                        <a href={`mailto:${props.email}?Subject=${props.category}`} target="_top">
+                            <Button style={{right: '0', position: 'absolute', marginTop: '10px'}}>
+                                <MdDrafts
+                                    style={{height: '40px', width: '40px'}}
+                                />
+                            </Button>
+                        </a>
+                    )
+                    :
+                    ''
+            }
             <Feature>{props.category}</Feature>
             <Price>{props.price}</Price>
             {/*<Quantity>Minimum quantity 1000piece</Quantity>*/}
