@@ -33,6 +33,14 @@ const MenuItemMobile = styled.span`
   padding: 5px;
   background-color: ${(props) => props.selected ? '#000' : ''};
   color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+  
+  & > a {
+    align-self: center;
+    font-size: ${(props) => props.theme.HeaderSize};
+    font-family: 'Propagan', sans-serif;
+    color: ${(props) => props.theme.TextColorMain} !important;
+    text-decoration: none;
+  }
 `;
 
 const LogoLink = styled(CustomLink)`

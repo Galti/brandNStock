@@ -53,7 +53,12 @@ class Menu extends React.Component {
                                     onClick={() => this.props.onMenuItemClick(menuItem)}
                                     index={index}
                                 >
-                                    <Link to={menuItem.link}>{menuItem.name}</Link>
+                                    {
+                                        index === 1 ?
+                                            <a href={menuItem.link} downlaod>{menuItem.name}</a>
+                                            :
+                                            <Link to={menuItem.link}>{menuItem.name}</Link>
+                                    }
                                     <TabUnderline selected={this.props.selected === `/#${menuItem.link}`}/>
                                 </Tab>
                             ))

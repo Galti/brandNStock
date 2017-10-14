@@ -19,6 +19,7 @@ import logo from '../../resources/images/logo-light.png';
 import brandsData from '../../resources/images/brands/brands';
 import Card3Column from '../Card3Column';
 import {Grid} from 'react-bootstrap';
+import priceList from '../../resources/documents/PriceList.pdf';
 
 const styles = {
     bmBurgerButton: {
@@ -53,6 +54,10 @@ const menuItems = [
     {
         name: 'Бренды',
         link: '/brands',
+    },
+    {
+        name: 'Прайслист',
+        link: priceList,
     },
     {
         name: 'О Нас',
@@ -197,14 +202,14 @@ class Header extends React.Component {
                         <Grid>
                             {
                                 this.state.searchResult ?
-                                    this.state.searchResult.map((brand) => {
-
+                                    this.state.searchResult.map((brand, index) => {
                                         const brandsRow = brandsData[brand.row];
                                         const theBrand = brandsRow[brand.col];
                                         console.log(theBrand);
                                         return (
                                             <Card3Column
                                                 image={theBrand.image}
+                                                key={index.toString()}
                                             />
                                         )
                                     })
@@ -228,23 +233,6 @@ class Header extends React.Component {
                     <LogoLink to='/'>
                         <img src={logo} style={{height: '56px'}}/>
                     </LogoLink>
-                    {
-                        menuItems.map((menuItem, index) =>
-                            <MenuItemMobile
-                                selected={this.state.selected === `/#${menuItem.link}`}
-                                key={index.toString()}
-                                onClick={() => {
-                                    this.handleMenuOpenClose();
-                                    this.handleMenuItemClick(menuItem);
-                                }}
-                            >
-                                <LeftMenuLink to={menuItem.link}
-                                              selected={this.state.selected === `/#${menuItem.link}`}>
-                                    {menuItem.name}
-                                </LeftMenuLink>
-                            </MenuItemMobile>
-                        )
-                    }
                     <FormGroup style={{width: '250px', marginTop: '10px'}}>
                         <InputGroup>
                             <FormControl
@@ -264,6 +252,30 @@ class Header extends React.Component {
                             </InputGroup.Addon>
                         </InputGroup>
                     </FormGroup>
+                    {
+                        menuItems.map((menuItem, index) =>
+                            <MenuItemMobile
+                                selected={this.state.selected === `/#${menuItem.link}`}
+                                key={index.toString()}
+                                onClick={() => {
+                                    this.handleMenuOpenClose();
+                                    this.handleMenuItemClick(menuItem);
+                                }}
+                            >
+                                {
+                                    index === 1 ?
+                                        <a href={menuItem.link} downlaod>{menuItem.name}</a>
+                                        :
+                                        <LeftMenuLink
+                                            to={menuItem.link}
+                                            selected={this.state.selected === `/#${menuItem.link}`}
+                                        >
+                                            {menuItem.name}
+                                        </LeftMenuLink>
+                                }
+                            </MenuItemMobile>
+                        )
+                    }
                 </MenuMobile>
                 <Content>
                     <InfoBar

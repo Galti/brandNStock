@@ -58,6 +58,14 @@ const Tab = styled.span`
     width: 100%;
     opacity: 1;
   }
+  
+  & > a {
+    align-self: center;
+    font-size: ${(props) => props.theme.HeaderSize};
+    font-family: 'Propagan', sans-serif;
+    color: ${(props) => props.theme.TextColorMain} !important;
+    text-decoration: none;
+  }
 `;
 
 const HamburgerButton = styled.div`
