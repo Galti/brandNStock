@@ -19,8 +19,10 @@ class MainSlider extends React.Component {
             <Wrapper>
                 <Slider {...settings}>
                     {
-                        mainSlider.map((imgLink) => (
-                            <img src={imgLink} />
+                        mainSlider.map((imgLink, index)=> (
+                            <div key={index.toString()}>
+                                <img src={imgLink} style={{ width: '100%'}}/>
+                            </div>
                         ))
                     }
                 </Slider>

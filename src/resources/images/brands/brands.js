@@ -185,19 +185,19 @@ const brands = [
         },
         {
             name: 'BIAGIOTTI',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '16',
             image: BIAGIOTTI,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'BJ CHARLES',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '9',
             image: BJCHARLES,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'Boy London',
@@ -235,11 +235,11 @@ const brands = [
         },
         {
             name: 'FERRE',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '15',
             image: FERRE,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'Fracomina Mini',
@@ -275,11 +275,11 @@ const brands = [
         },
         {
             name: 'DKNY',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '17',
             image: DKNY,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'Dondup',
@@ -357,11 +357,11 @@ const brands = [
         },
         {
             name: 'FEFE',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '14',
             image: FEFE,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'Philipp Plein',
@@ -381,11 +381,11 @@ const brands = [
         },
         {
             name: 'CATYA',
-            typology: ' ',
+            typology: '',
             age: '',
             price: '9',
             image: CATYA,
-            gender: ' '
+            gender: ''
         },
         {
             name: 'Danielle Alessandrini',
