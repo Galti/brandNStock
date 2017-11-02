@@ -3,7 +3,6 @@ import 'typeface-roboto';
 import theme from './ThemeForStyledComponents';
 import {ThemeProvider} from 'styled-components';
 import {
-    BrowserRouter as Router,
     Route,
     HashRouter
 } from 'react-router-dom';
@@ -28,15 +27,22 @@ class App extends Component {
                     <div>
                         <HashRouter>
                             <div>
-                                <Header
-                                    firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}
-                                    contacts={contacts}
-                                />
-
+                                <Route component={
+                                    (props) =>
+                                        <Header
+                                            firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}
+                                            contacts={contacts}
+                                            {...props}
+                                        />
+                                }/>
+                                {/*<Header*/}
+                                    {/*firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}*/}
+                                    {/*contacts={contacts}*/}
+                                {/*/>*/}
                                 <Route exact path="/" component={() => <HomePage contacts={contacts} />} />
                                 <Route exact path="/about-us" component={AboutUsPage}/>
                                 <Route path="/contacts" component={() => <ContactsPage contacts={contacts}/> }/>
-                                <Route path="/brands" component={BrandsPage}/>
+                                <Route path="/brands/:paginationActivePage" component={BrandsPage}/>
 
                                 <Footer
                                     contacts={contacts}

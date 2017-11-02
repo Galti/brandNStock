@@ -11,6 +11,11 @@ const settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
+    fade: true,
 };
 
 class MainSlider extends React.Component {
@@ -21,7 +26,11 @@ class MainSlider extends React.Component {
                     {
                         mainSlider.map((imgLink, index)=> (
                             <div key={index.toString()}>
-                                <img src={imgLink} style={{ width: '100%'}}/>
+                                <img
+                                    src={imgLink}
+                                    style={{ width: '100%'}}
+                                    alt=""
+                                />
                             </div>
                         ))
                     }

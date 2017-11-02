@@ -33,8 +33,8 @@ class Information extends React.Component {
                         <TitleInformation>
                             Viber, WhatsApp
                         </TitleInformation>
-                        <div><img src={viberIcon} width={'25px'}/> {this.props.contacts.phone} </div>
-                        <div><img src={whatsAppIcon} width={'25px'}/> {this.props.contacts.phone} </div>
+                        <div><img src={viberIcon} alt='' width={'25px'}/> {this.props.contacts.phone} </div>
+                        <div><img src={whatsAppIcon} alt='' width={'25px'}/> {this.props.contacts.phone} </div>
                     </ColInformation>
                     <ColInformation xs={12} sm={6} md={3}>
                         <EmailIcon/>

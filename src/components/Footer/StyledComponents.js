@@ -36,6 +36,7 @@ const WrapperFooterLogo = styled.div`
   float: left;
   height: 188px;
   width: 100%;
+  margin-left: -15px;
 `;
 
 

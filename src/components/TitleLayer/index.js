@@ -4,10 +4,6 @@ import {Title, HorizontalLine, Wrapper} from './StyledComponents.'
 
 
 class TitleLayer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <Wrapper>

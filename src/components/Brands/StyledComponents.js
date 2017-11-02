@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Col, Pagination as BootstrapPagination } from 'react-bootstrap';
 
 const Wrapper = styled.div`
 

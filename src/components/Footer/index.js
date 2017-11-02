@@ -21,7 +21,7 @@ class Footer extends React.Component {
         return (
             <Wrapper>
                 <WrapperFooterLogo>
-                    <img src={LogoLight} style={{width: '100%', marginTop: '-15px', opacity: '0.5'}}/>
+                    <img src={LogoLight} alt='Brand and Stock Logo' style={{width: '100%', marginTop: '-15px', opacity: '0.5'}}/>
                 </WrapperFooterLogo>
                 <Row>
                     <Col xs={12} sm={6} md={9}>

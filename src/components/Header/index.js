@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {bubble as MenuMobile} from 'react-burger-menu';
-import Dialog, {DialogTitle} from 'material-ui/Dialog';
-import IconButton from 'material-ui/IconButton';
-import CloseIcon from 'material-ui-icons/Close';
+// import Dialog, {DialogTitle} from 'material-ui/Dialog';
+// import IconButton from 'material-ui/IconButton';
+// import CloseIcon from 'material-ui-icons/Close';
 import {FormGroup, FormControl, InputGroup, Glyphicon} from 'react-bootstrap';
 import {
     Wrapper,
@@ -11,14 +11,13 @@ import {
     MenuItemMobile,
     LogoLink,
     LeftMenuLink,
-    SearchWindowWrapper,
 } from './StyledComponents';
 import InfoBar from './InfoBar';
 import Menu from './Menu';
 import logo from '../../resources/images/logo-light.png';
 import brandsData from '../../resources/images/brands/brands';
-import Card3Column from '../Card3Column';
-import {Grid} from 'react-bootstrap';
+// import Card3Column from '../Card3Column';
+// import {Grid} from 'react-bootstrap';
 import priceList from '../../resources/documents/PriceList.pdf';
 
 const styles = {
@@ -53,7 +52,7 @@ const styles = {
 const menuItems = [
     {
         name: 'Бренды',
-        link: '/brands',
+        link: '/brands/1',
     },
     {
         name: 'Прайслист',
@@ -75,7 +74,6 @@ class Header extends React.Component {
         this.state = {
             isMenuOpen: false,
             selected: this.props.firstLoadedRoute,
-            isSearchWindowOpen: false,
             searchResult: null,
             searchText: '',
         }
@@ -120,27 +118,20 @@ class Header extends React.Component {
             })
         });
 
-        if (searchResult.length > 0) {
-            this.setState({
-                isSearchWindowOpen: true,
-                searchResult: searchResult,
-                searchText: searchText,
-            })
-        } else {
-            this.setState({
-                isSearchWindowOpen: true,
-                searchResult: null,
-                searchText: searchText,
-            })
-        }
-    };
 
-    handleCloseSearchWindow = () => {
-        this.setState({
-            isSearchWindowOpen: false,
-            searchResult: null,
-            searchText: '',
-        })
+
+        if (searchResult.length > 0) {
+            this.props.history.push('/');
+            this.props.history.push({
+                pathname: `/brands/${Number(searchResult[0].row) + 1}`,
+                search: `?brand=${searchResult[0].col}`
+            });
+            if (this.state.isMenuOpen) {
+                this.handleMenuOpenClose();
+            }
+        } else {
+            alert(`Sorry, there is no search result for ${this.searchText}`)
+        }
     };
 
     handleMenuOpenClose = () => {
@@ -177,50 +168,49 @@ class Header extends React.Component {
         styles.bmOverlay.opacity = this.state.isMenuOpen ? '1' : '0';
         return (
             <Wrapper>
-                <SearchWindowWrapper
-                    onRequestClose={this.handleCloseSearchWindow}
-                    open={this.state.isSearchWindowOpen}
-                    fullScreen
-                >
-                    <DialogTitle
-                        style={{display: 'flex',}}
-                    >
-                        Search Results for <i>{this.state.searchText}</i>
-                        <IconButton
-                            aria-label="Close"
-                            style={{position: 'absolute', right: 0, marginTop: '-15px', marginRight: '5px'}}
-                            onClick={this.handleCloseSearchWindow}
-                        >
-                            <CloseIcon/>
-                        </IconButton>
-                    </DialogTitle>
-                    <div style={{
-                        height: '100%',
-                        width: '100%',
-                        display: 'flex',
-                    }}>
-                        <Grid>
-                            {
-                                this.state.searchResult ?
-                                    this.state.searchResult.map((brand, index) => {
-                                        const brandsRow = brandsData[brand.row];
-                                        const theBrand = brandsRow[brand.col];
-                                        console.log(theBrand);
-                                        return (
-                                            <Card3Column
-                                                image={theBrand.image}
-                                                key={index.toString()}
-                                            />
-                                        )
-                                    })
-                                    :
-                                    (
-                                        <div>No Search result for {this.state.searchText}</div>
-                                    )
-                            }
-                        </Grid>
-                    </div>
-                </SearchWindowWrapper>
+                {/*<Dialog*/}
+                    {/*onRequestClose={this.handleCloseSearchWindow}*/}
+                    {/*open={this.state.isSearchWindowOpen}*/}
+                    {/*fullScreen*/}
+                {/*>*/}
+                    {/*<DialogTitle*/}
+                        {/*style={{display: 'flex',}}*/}
+                    {/*>*/}
+                        {/*Search Results for <i>{this.state.searchText}</i>*/}
+                        {/*<IconButton*/}
+                            {/*aria-label="Close"*/}
+                            {/*style={{position: 'absolute', right: 0, marginTop: '-15px', marginRight: '5px'}}*/}
+                            {/*onClick={this.handleCloseSearchWindow}*/}
+                        {/*>*/}
+                            {/*<CloseIcon/>*/}
+                        {/*</IconButton>*/}
+                    {/*</DialogTitle>*/}
+                    {/*<div style={{*/}
+                        {/*height: '100%',*/}
+                        {/*width: '100%',*/}
+                        {/*display: 'flex',*/}
+                    {/*}}>*/}
+                        {/*<Grid>*/}
+                            {/*{*/}
+                                {/*this.state.searchResult ?*/}
+                                    {/*this.state.searchResult.map((brand, index) => {*/}
+                                        {/*const brandsRow = brandsData[brand.row];*/}
+                                        {/*const theBrand = brandsRow[brand.col];*/}
+                                        {/*return (*/}
+                                            {/*<Card3Column*/}
+                                                {/*image={theBrand.image}*/}
+                                                {/*key={index.toString()}*/}
+                                            {/*/>*/}
+                                        {/*)*/}
+                                    {/*})*/}
+                                    {/*:*/}
+                                    {/*(*/}
+                                        {/*<div>No Search result for {this.state.searchText}</div>*/}
+                                    {/*)*/}
+                            {/*}*/}
+                        {/*</Grid>*/}
+                    {/*</div>*/}
+                {/*</Dialog>*/}
                 <MenuMobile
                     width='280px'
                     styles={styles}
@@ -231,7 +221,7 @@ class Header extends React.Component {
                     }}
                 >
                     <LogoLink to='/'>
-                        <img src={logo} style={{height: '56px'}}/>
+                        <img src={logo} alt='Brand And Stock Logo' style={{height: '56px'}}/>
                     </LogoLink>
                     <FormGroup style={{width: '250px', marginTop: '10px'}}>
                         <InputGroup>
@@ -264,7 +254,7 @@ class Header extends React.Component {
                             >
                                 {
                                     index === 1 ?
-                                        <a href={menuItem.link} downlaod>{menuItem.name}</a>
+                                        <a href={menuItem.link} style={{ color: 'black'}} download={priceList}>{menuItem.name}</a>
                                         :
                                         <LeftMenuLink
                                             to={menuItem.link}

@@ -8,10 +8,6 @@ import {Parallax} from 'react-parallax';
 import background from '../../resources/images/quote.jpg';
 
 class Quote extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

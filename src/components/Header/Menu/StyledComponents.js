@@ -51,7 +51,7 @@ const Tab = styled.span`
   font-size: ${(props) => props.theme.HeaderSize};
   flex-direction: column;
   justify-content: center;
-  margin: 0 ${(props) => props.index !== 2 ? '20px' : 0} 0 20px;
+  margin: 0 ${(props) => props.index !== 3 ? '20px' : 0} 0 20px;
   height: 30px;
   
   &:hover ${TabUnderline} {

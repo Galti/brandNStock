@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Product from '../../models/Product';
 import Card3Column from '../Card3Column';
 import Card2Column from '../Card2Column';
 import TitleLayer from '../../components/TitleLayer';
@@ -10,14 +9,11 @@ import {
     Col,
 } from './StyledComponents';
 import {Row} from 'react-bootstrap';
-// card3Columns IMAGES
 import accessories from '../../resources/images/recommended/card3Columns/accessories.jpg';
 import children from '../../resources/images/recommended/card3Columns/children.jpg';
 import secondHand from '../../resources/images/recommended/card3Columns/second-hand.jpg';
-// card3Columns IMAGES
 import brandStock from '../../resources/images/recommended/card2Columns/brand-stock.jpg';
 import womenStock from '../../resources/images/recommended/card2Columns/women-stock.jpg';
-// import image from '../../resources/images/home-img-05-370x250.jpg';
 
 const card2Columns = [
     {

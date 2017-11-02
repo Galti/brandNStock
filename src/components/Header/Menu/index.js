@@ -43,7 +43,7 @@ class Menu extends React.Component {
                         </IconButton>
                     </HamburgerButton>
                     <Link to='/' style={{ zIndex: 100 }}>
-                        <Logo><img src={logo} height='56px'/></Logo>
+                        <Logo><img src={logo} alt='' height='56px'/></Logo>
                     </Link>
                     <Tabs>
                         {

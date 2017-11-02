@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as LinkShared } from '../shared-styled-components';
 import { Col as ColBootstrap} from 'react-bootstrap';
 
 const Wrapper = styled.section`

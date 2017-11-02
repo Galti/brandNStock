@@ -4,7 +4,7 @@ import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
 import {FormGroup, FormControl, InputGroup, Glyphicon} from 'react-bootstrap';
 
-import {Wrapper, InfoA, IconSpan, InfoAForPhone, SearchBar} from './StyledComponents';
+import {Wrapper, InfoA, IconSpan, InfoAForPhone} from './StyledComponents';
 
 let searchText = '';
 

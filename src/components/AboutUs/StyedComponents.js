@@ -12,6 +12,11 @@ const ImageItem = styled(Avatar)`
   width: 120px !important;
   height: 120px !important;
   align-self: center;
+  
+  @media (max-width: ${(props) => props.theme.BootstrapSizes.xs}) {
+    width: 70px !important;
+    height: 70px !important;
+  }
 `;
 
 const WrapperItemDescription = styled.div`
@@ -20,12 +25,17 @@ const WrapperItemDescription = styled.div`
   display: flex;
   align-content: center;
   flex-direction: column;
+  padding-right: 5px;
 `;
 
 const Title = styled.div`
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+  
+  @media (max-width: ${(props) => props.theme.BootstrapSizes.xs}) {
+    font-size: 18px;
+  }
 `;
 
 const DescriptionItems = styled.div`

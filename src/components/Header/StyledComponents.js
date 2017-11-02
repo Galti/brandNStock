@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {Link as CustomLink} from '../shared-styled-components';
-import Dialog, { DialogTitle } from 'material-ui/Dialog';
 
 const Wrapper = styled.header`
   width: 100%;
@@ -38,7 +37,7 @@ const MenuItemMobile = styled.span`
     align-self: center;
     font-size: ${(props) => props.theme.HeaderSize};
     font-family: 'Propagan', sans-serif;
-    color: ${(props) => props.theme.TextColorMain} !important;
+    color: ${(props) => props.theme.TextColorMain};
     text-decoration: none;
   }
 `;
@@ -54,7 +53,7 @@ const LogoLink = styled(CustomLink)`
 
 const LeftMenuLink = styled(CustomLink)`
   width: 100%;
-  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
+  color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain} !important;
   display: block;
   font-family: 'Propagan', sans-serif;
   
@@ -62,13 +61,8 @@ const LeftMenuLink = styled(CustomLink)`
     color: ${(props) => props.selected ? '#fff' : props.theme.TextColorMain};
     text-decoration: none !important;
   }
+ 
 `;
-
-const SearchWindowWrapper = styled(Dialog)`
-`;
-
-
-
 
 export {
     Wrapper,
@@ -76,5 +70,4 @@ export {
     MenuItemMobile,
     LogoLink,
     LeftMenuLink,
-    SearchWindowWrapper,
 }

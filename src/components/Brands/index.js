@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Brand from '../../models/Brand';
-import {Grid, Col, Row, Pagination, Glyphicon} from 'react-bootstrap';
+import {Grid, Col, Pagination, Glyphicon} from 'react-bootstrap';
 import {
     ImageSmall,
     InfoOverlay,
@@ -27,6 +27,12 @@ class Brands extends React.Component {
         }
 
     }
+
+    scrollToBrand = () => {
+        if (this.searchedNode) {
+            this.searchedNode.scrollIntoView();
+        }
+    };
 
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -55,8 +61,9 @@ class Brands extends React.Component {
         })
     };
 
+    searchedNode;
+
     render() {
-        console.log(this.state.brands);
         return (
             <div>
                 <PageHeader
@@ -70,10 +77,18 @@ class Brands extends React.Component {
                             if ([1, 2, 7].some((num) => index === num)) {
                                 return (
                                     <Col xs={12} sm={6} md={8} style={{marginTop: '20px'}}
-                                         key={`colBrands${index.toString()}`}>
+                                         key={`colBrands${index.toString()}`}
+                                    >
                                         <div
                                             onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
                                             onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            ref={(node) => {
+                                                if (index.toString() === this.props.searchedBrand) {
+                                                    if (node) {
+                                                        this.searchedNode = node;
+                                                    }
+                                                }
+                                            }}
                                         >
                                             <InfoOverlay
                                                 isHovered={brand.isHovered}
@@ -115,11 +130,18 @@ class Brands extends React.Component {
                                                     </AgePriceSpan>
                                                 </MinorInfoWrapper>
                                                 <Characteristics>
-                                                    <div>{brand.typology ? `#${brand.typology}` : ''}</div>
-                                                    <div>{brand.gender ? `#${brand.gender}` : ''}</div>
+                                                    <div>{brand.typology.trim() ? `#${brand.typology}` : ''}</div>
+                                                    <div>{brand.gender.trim() ? `#${brand.gender}` : ''}</div>
                                                 </Characteristics>
                                             </InfoOverlay>
-                                            <ImageSmall src={brand.image}/>
+                                            <ImageSmall
+                                                src={brand.image}
+                                                onLoad={() => {
+                                                    if (index.toString() === this.props.searchedBrand) {
+                                                        this.scrollToBrand();
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                     </Col>
                                 )
@@ -131,6 +153,13 @@ class Brands extends React.Component {
                                         <div
                                             onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
                                             onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            ref={(node) => {
+                                                if (index.toString() === this.props.searchedBrand) {
+                                                    if (node) {
+                                                        this.searchedNode = node;
+                                                    }
+                                                }
+                                            }}
                                         >
                                             <InfoOverlay
                                                 isHovered={brand.isHovered}
@@ -172,11 +201,18 @@ class Brands extends React.Component {
                                                     </AgePriceSpan>
                                                 </MinorInfoWrapper>
                                                 <Characteristics>
-                                                    <div>{brand.typology ? `#${brand.typology}` : ''}</div>
-                                                    <div>{brand.gender ? `#${brand.gender}` : ''}</div>
+                                                    <div>{brand.typology.trim() ? `#${brand.typology}` : ''}</div>
+                                                    <div>{brand.gender.trim() ? `#${brand.gender}` : ''}</div>
                                                 </Characteristics>
                                             </InfoOverlay>
-                                            <ImageSmall src={brand.image}/>
+                                            <ImageSmall
+                                                src={brand.image}
+                                                onLoad={() => {
+                                                    if (index.toString() === this.props.searchedBrand) {
+                                                        this.scrollToBrand();
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                     </Col>
                                 )
@@ -201,6 +237,7 @@ Brands.propTypes = {
     pagesCount: PropTypes.number,
     paginationActivePage: PropTypes.number,
     onPaginationRouteChange: PropTypes.func,
+    searchedBrand: PropTypes.number,
 };
 
 export default Brands;

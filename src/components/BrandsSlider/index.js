@@ -11,9 +11,6 @@ import {
 import TitleLayer from '../TitleLayer';
 import popularBrands from '../../resources/images/popularBrands';
 import arrow from '../../resources/images/arrow-right.svg';
-import theme from '../../ThemeForStyledComponents';
-
-console.log(popularBrands);
 
 const settings = {
     infinite: true,
