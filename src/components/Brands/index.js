@@ -80,8 +80,15 @@ class Brands extends React.Component {
                                          key={`colBrands${index.toString()}`}
                                     >
                                         <div
-                                            onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
-                                            onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            // onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
+                                            // onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            onClick={() => {
+                                                if (brand.isHovered) {
+                                                    this.handleItemMouseLeave(brand.name)
+                                                } else {
+                                                    this.handleItemMouseEnter(brand.name)
+                                                }
+                                            }}
                                             ref={(node) => {
                                                 if (index.toString() === this.props.searchedBrand) {
                                                     if (node) {
@@ -89,6 +96,7 @@ class Brands extends React.Component {
                                                     }
                                                 }
                                             }}
+                                            style={{ cursor: 'pointer' }}
                                         >
                                             <InfoOverlay
                                                 isHovered={brand.isHovered}
@@ -151,8 +159,15 @@ class Brands extends React.Component {
                                          key={`colBrands${index.toString()}`}
                                     >
                                         <div
-                                            onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
-                                            onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            // onMouseEnter={() => this.handleItemMouseEnter(brand.name)}
+                                            // onMouseLeave={() => this.handleItemMouseLeave(brand.name)}
+                                            onClick={() => {
+                                                if (brand.isHovered) {
+                                                    this.handleItemMouseLeave(brand.name)
+                                                } else {
+                                                    this.handleItemMouseEnter(brand.name)
+                                                }
+                                            }}
                                             ref={(node) => {
                                                 if (index.toString() === this.props.searchedBrand) {
                                                     if (node) {
@@ -160,6 +175,7 @@ class Brands extends React.Component {
                                                     }
                                                 }
                                             }}
+                                            style={{ cursor: 'pointer' }}
                                         >
                                             <InfoOverlay
                                                 isHovered={brand.isHovered}
@@ -212,6 +228,7 @@ class Brands extends React.Component {
                                                         this.scrollToBrand();
                                                     }
                                                 }}
+                                                style={{ alignSelf: 'center', display: 'flex'}}
                                             />
                                         </div>
                                     </Col>
@@ -222,7 +239,12 @@ class Brands extends React.Component {
                 </Grid>
                 <PaginationContainer>
                     <Pagination
+                        prev
+                        next
+                        boundaryLinks
+                        ellipsis
                         bsSize="medium"
+                        maxButtons={4}
                         items={this.props.pagesCount}
                         activePage={this.props.paginationActivePage}
                         onSelect={(eventKey) => this.props.onPaginationRouteChange(eventKey)}/>

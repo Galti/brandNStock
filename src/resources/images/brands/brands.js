@@ -108,6 +108,53 @@ import VictoriaandStella from './victoria and stella.svg';
 import Vittoria from './vittoria.svg';
 import YesZee from './yes zee.svg';
 
+// the big ones
+import adidas from './largeImages/adidas.svg';
+import asics from './largeImages/asics.svg';
+import blugirl from './largeImages/blugirl.svg';
+import catbalou from './largeImages/catbalou.svg';
+import deha from './largeImages/deha.svg';
+import kappa from './largeImages/kappa.svg';
+import mango from './largeImages/mango.svg';
+import parasuco from './largeImages/parasuco.svg';
+import Puma from './largeImages/Puma.svg';
+import timeout from './largeImages/timeout.svg';
+import veramont from './largeImages/veramont.svg';
+
+// the small ones
+import ALINAfabrri from './smallImages/ALINAfabrri.svg';
+import ANNAFIELD from './smallImages/ANNA FIELD.svg';
+import antonyMorato from './smallImages/antony morato.svg';
+import bgn from './smallImages/bgn.svg';
+import bleifrei from './smallImages/bleifrei.svg';
+import blend from './smallImages/blend.svg';
+import bonaparte from './smallImages/bonaparte.svg';
+import caramelo from './smallImages/caramelo.svg';
+import carlings from './smallImages/carlings.svg';
+import chamonix from './smallImages/chamonix.svg';
+import conbipel from './smallImages/conbipel.svg';
+import cordonBerlin from './smallImages/cordon berlin.svg';
+import gaudi from './smallImages/gaudi.svg';
+import grease from './smallImages/grease.svg';
+import GSUS from './smallImages/GSUS.svg';
+import inditex from './smallImages/inditex.svg';
+import jackjones from './smallImages/jackjones.svg';
+import kaffecream from './smallImages/kaffecream.svg';
+import kontatto from './smallImages/kontatto.svg';
+import massana from './smallImages/massana.svg';
+import mosrose from './smallImages/mosrose.svg';
+import MURPHYandNYE from './smallImages/MURPHY & NYE.svg';
+import ONLYandSONS from './smallImages/ONLY & SONS.svg';
+import papermoon from './smallImages/papermoon.svg';
+import pierrecardin from './smallImages/pierrecardin.svg';
+import rinascimento from './smallImages/rinascimento.svg';
+import stenafel from './smallImages/stenafel.svg';
+import tomtailor from './smallImages/tomtailor.svg';
+import VAILENT from './smallImages/VAILENT.svg';
+import VEROMODA from './smallImages/VERO MODA.svg';
+import vila from './smallImages/vila.svg';
+import YAYA from './smallImages/YAYA.svg';
+// import YOUYOUNG from './smallImages/YOU YOUNG.svg';
 
 const brands = [
     [
@@ -991,6 +1038,358 @@ const brands = [
             price: '20',
             image: USPOLOASSN,
             gender: 'boy'
+        },
+    ],
+    [
+        {
+            name: 'ALINA FABBRI',
+            typology: 'сумки',
+            age: '',
+            price: '17,9',
+            image: ALINAfabrri,
+            gender: 'женский'
+        },
+        {
+            name: 'ADIDAS',
+            typology: 'спортивная одежда',
+            age: '',
+            price: '12,5',
+            image: adidas,
+            gender: 'подростковый/мужской'
+        },
+        {
+            name: 'ASICS',
+            typology: 'бейсболки',
+            age: '',
+            price: '4',
+            image: asics,
+            gender: 'мужской'
+        },
+        {
+            name: 'ANNA FIELD',
+            typology: 'обувь',
+            age: '',
+            price: '6.9',
+            image: ANNAFIELD,
+            gender: 'женский'
+        },
+        {
+            name: 'ANTONY MORATO',
+            typology: 'одежда',
+            age: '',
+            price: '9.9',
+            image: antonyMorato,
+            gender: 'мужская'
+        },
+        {
+            name: 'BGN',
+            typology: 'одежда',
+            age: '',
+            price: '10.5',
+            image: bgn,
+            gender: 'женская'
+        },
+        {
+            name: 'BLEIFREI',
+            typology: 'одежда',
+            age: '',
+            price: '5.9',
+            image: bleifrei,
+            gender: 'женская'
+        },
+        {
+            name: 'BLUMARINE-BLUGIRL',
+            typology: 'одежда',
+            age: '',
+            price: '26',
+            image: blugirl,
+            gender: 'женская'
+        },
+        {
+            name: 'BLEND Джинсы',
+            typology: '',
+            age: '',
+            price: '6.5',
+            image: blend,
+            gender: 'женский'
+        },
+        {
+            name: `BON\'A PARTE`,
+            typology: 'одежда',
+            age: '',
+            price: '6,9',
+            image: bonaparte,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'CARAMELO CORTEFIEL',
+            typology: 'одежда',
+            age:'',
+            price: '7.9',
+            image: caramelo,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'CARLINGS',
+            typology: 'одежда',
+            age: '',
+            price: '3.9',
+            image: carlings,
+            gender: 'женская/мужская'
+        },
+    ],
+    [
+        {
+            name: 'CHAMONIX',
+            typology: 'одежда',
+            age: '',
+            price: '9,4',
+            image: chamonix,
+            gender: 'женская/мужская/детская'
+        },
+        {
+            name: 'CATBALOU',
+            typology: 'одежда',
+            age: '',
+            price: '8,9',
+            image: catbalou,
+            gender: 'мужской'
+        },
+        {
+            name: 'DEHA',
+            typology: 'одежда',
+            age: '',
+            price: '8.9',
+            image: deha,
+            gender: 'женская'
+        },
+        {
+            name: 'CONBIPEL',
+            typology: 'одежда',
+            age: '',
+            price: '3.9',
+            image: conbipel,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'CORDON BERLIN',
+            typology: 'куртки',
+            age: '',
+            price: '26',
+            image: cordonBerlin,
+            gender: 'мужская'
+        },
+        {
+            name: 'GAUDI',
+            typology: 'одежда',
+            age: '',
+            price: '18.5',
+            image: gaudi,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'GREASE',
+            typology: 'футболки',
+            age: '',
+            price: '4.5',
+            image: grease,
+            gender: 'женская'
+        },
+        {
+            name: 'kappa',
+            typology: 'нижнее белье',
+            age: '',
+            price: '3.6',
+            image: kappa,
+            gender: 'мужская'
+        },
+        {
+            name: 'GSUS',
+            typology: 'одежда',
+            age: '',
+            price: '8.9',
+            image: GSUS,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'INDITEX',
+            typology: 'одежда',
+            age: '',
+            price: '6,5',
+            image: inditex,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'JACKE & JONES',
+            typology: 'свитера',
+            age:'',
+            price: '8.9',
+            image: jackjones,
+            gender: 'мужская'
+        },
+        {
+            name: 'KAFFE CREAM',
+            typology: 'одежда',
+            age: '',
+            price: '6.6',
+            image: kaffecream,
+            gender: 'женская'
+        },
+    ],
+    [
+        {
+            name: 'KONTATTO',
+            typology: 'одежда',
+            age: '',
+            price: '4,9',
+            image: kontatto,
+            gender: 'женская'
+        },
+        {
+            name: 'MANGO',
+            typology: 'одежда',
+            age: '',
+            price: '6.5',
+            image: mango,
+            gender: 'женская'
+        },
+        {
+            name: 'PARASUCO',
+            typology: 'джинсовые шорты',
+            age: '',
+            price: '5,7',
+            image: parasuco,
+            gender: 'женская'
+        },
+        {
+            name: 'MASSANA',
+            typology: 'одежда',
+            age: '',
+            price: '5.9',
+            image: massana,
+            gender: 'женская'
+        },
+        {
+            name: 'MOSROSE',
+            typology: 'нижнее белье',
+            age: '',
+            price: '4.5',
+            image: mosrose,
+            gender: 'женская'
+        },
+        {
+            name: 'MURPHY & NYE',
+            typology: 'одежда',
+            age: '',
+            price: '7.9',
+            image: MURPHYandNYE,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'ONLY & SONS',
+            typology: '',
+            age: '',
+            price: '26',
+            image: ONLYandSONS,
+            gender: 'мужская'
+        },
+        {
+            name: 'PUMA',
+            typology: 'бейсболки',
+            age: '',
+            price: '4.5',
+            image: Puma,
+            gender: 'детская'
+        },
+        {
+            name: 'PAPER MOON PLUS',
+            typology: 'одежда',
+            age: '',
+            price: '5.9',
+            image: papermoon,
+            gender: 'детская'
+        },
+        {
+            name: 'PIERRE CARDIN',
+            typology: 'куртки',
+            age: '',
+            price: '18.9',
+            image: pierrecardin,
+            gender: 'мужская'
+        },
+        {
+            name: 'RINASCIMENTO',
+            typology: 'одежда',
+            age:'',
+            price: '15.9',
+            image: rinascimento,
+            gender: 'женская'
+        },
+        {
+            name: 'STEFANEL',
+            typology: 'брюки',
+            age: '',
+            price: '11.5',
+            image: stenafel,
+            gender: 'женская'
+        },
+    ],
+    [
+        {
+            name: 'TOM TAILOR',
+            typology: 'одежда',
+            age: '',
+            price: '8.9',
+            image: tomtailor,
+            gender: 'женская/мужская'
+        },
+        {
+            name: 'TIMEOUT',
+            typology: 'одежда',
+            age: '',
+            price: '2.9',
+            image: timeout,
+            gender: 'мужская'
+        },
+        {
+            name: 'VERA MONT',
+            typology: 'одежда',
+            age: '',
+            price: '11.9',
+            image: veramont,
+            gender: 'женская'
+        },
+        {
+            name: 'VAILENT',
+            typology: 'одежда',
+            age: '',
+            price: '4.5',
+            image: VAILENT,
+            gender: 'мужская'
+        },
+        {
+            name: 'VERO MODA',
+            typology: 'брюки',
+            age: '',
+            price: '6.5',
+            image: VEROMODA,
+            gender: 'женская'
+        },
+        {
+            name: 'VILA',
+            typology: 'одежда',
+            age: '',
+            price: '7.2',
+            image: vila,
+            gender: 'женская'
+        },
+        {
+            name: 'YAYA',
+            typology: 'одежда',
+            age: '',
+            price: '6.5',
+            image: YAYA,
+            gender: 'женская'
         },
     ],
 
