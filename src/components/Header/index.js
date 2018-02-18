@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { bubble as MenuMobile } from 'react-burger-menu';
-// import Dialog, {DialogTitle} from 'material-ui/Dialog';
-// import IconButton from 'material-ui/IconButton';
-// import CloseIcon from 'material-ui-icons/Close';
-import { FormGroup, FormControl, InputGroup } from 'react-bootstrap';
-import Icon from 'material-ui/Icon';
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import {
     Wrapper,
     Content,
@@ -17,8 +13,6 @@ import InfoBar from './InfoBar';
 import Menu from './Menu';
 import logo from '../../resources/images/logo-light.png';
 import brandsData from '../../resources/images/brands/brands';
-// import Card3Column from '../Card3Column';
-// import {Grid} from 'react-bootstrap';
 import priceList from '../../resources/documents/PriceList.pdf';
 
 const styles = {
@@ -162,56 +156,11 @@ class Header extends React.Component {
 
     searchText = '';
 
-
     render() {
-        // console.log(this.state.selected);
         styles.bmMenuWrap.marginLeft = this.state.isMenuOpen ? '0' : '-200px';
         styles.bmOverlay.opacity = this.state.isMenuOpen ? '1' : '0';
         return (
             <Wrapper>
-                {/*<Dialog*/}
-                {/*onRequestClose={this.handleCloseSearchWindow}*/}
-                {/*open={this.state.isSearchWindowOpen}*/}
-                {/*fullScreen*/}
-                {/*>*/}
-                {/*<DialogTitle*/}
-                {/*style={{display: 'flex',}}*/}
-                {/*>*/}
-                {/*Search Results for <i>{this.state.searchText}</i>*/}
-                {/*<IconButton*/}
-                {/*aria-label="Close"*/}
-                {/*style={{position: 'absolute', right: 0, marginTop: '-15px', marginRight: '5px'}}*/}
-                {/*onClick={this.handleCloseSearchWindow}*/}
-                {/*>*/}
-                {/*<CloseIcon/>*/}
-                {/*</IconButton>*/}
-                {/*</DialogTitle>*/}
-                {/*<div style={{*/}
-                {/*height: '100%',*/}
-                {/*width: '100%',*/}
-                {/*display: 'flex',*/}
-                {/*}}>*/}
-                {/*<Grid>*/}
-                {/*{*/}
-                {/*this.state.searchResult ?*/}
-                {/*this.state.searchResult.map((brand, index) => {*/}
-                {/*const brandsRow = brandsData[brand.row];*/}
-                {/*const theBrand = brandsRow[brand.col];*/}
-                {/*return (*/}
-                {/*<Card3Column*/}
-                {/*image={theBrand.image}*/}
-                {/*key={index.toString()}*/}
-                {/*/>*/}
-                {/*)*/}
-                {/*})*/}
-                {/*:*/}
-                {/*(*/}
-                {/*<div>No Search result for {this.state.searchText}</div>*/}
-                {/*)*/}
-                {/*}*/}
-                {/*</Grid>*/}
-                {/*</div>*/}
-                {/*</Dialog>*/}
                 <MenuMobile
                     width='280px'
                     styles={styles}
@@ -235,23 +184,12 @@ class Header extends React.Component {
                                         this.handleSearch(this.searchText);
                                     }
                                 }}
-                                style={{
-                                    borderRadius: '3px'
-                                }}
                             />
-                            <div
+                            <InputGroup.Addon
                                 onClick={() => this.handleSearch(this.searchText)}
-                                style={{
-                                    width: '40px',
-                                    alignItems: 'center',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    marginLeft: '-40px',
-                                    zIndex: '123'
-                                }}
                             >
-                                <Icon style={{ fontSize: '30px', color: 'rgba(0,0,0,0.4)' }}>search</Icon>
-                            </div>
+                                <Glyphicon glyph="search" style={{ cursor: 'pointer' }} />
+                            </InputGroup.Addon>
                         </InputGroup>
                     </FormGroup>
                     {
