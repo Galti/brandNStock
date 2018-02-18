@@ -8,7 +8,7 @@ import {
     Content,
     Col,
 } from './StyledComponents';
-import {Row} from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import accessories from '../../resources/images/recommended/card3Columns/accessories.jpg';
 import children from '../../resources/images/recommended/card3Columns/children.jpg';
 import secondHand from '../../resources/images/recommended/card3Columns/second-hand.jpg';
@@ -58,7 +58,7 @@ class LayerRecommended extends React.Component {
     render() {
         return (
             <Wrapper>
-                <TitleLayer text='Актуальные предложения'/>
+                <TitleLayer text='Актуальные предложения' />
                 <Content>
                     <Row>
                         {
@@ -75,19 +75,21 @@ class LayerRecommended extends React.Component {
                             ))
                         }
                     </Row>
-                    {
-                        card3Columns.map((item, index) => (
-                            <Col xs={12} sm={6} md={4} key={`${index.toString()}card3Columns`}>
-                                <Card3Column
-                                    image={item.image}
-                                    category={item.category}
-                                    price={item.price}
-                                    description={item.description}
-                                    email={this.props.contacts.email}
-                                />
-                            </Col>
-                        ))
-                    }
+                    <Row>
+                        {
+                            card3Columns.map((item, index) => (
+                                <Col xs={12} sm={6} md={4} key={`${index.toString()}card3Columns`}>
+                                    <Card3Column
+                                        image={item.image}
+                                        category={item.category}
+                                        price={item.price}
+                                        description={item.description}
+                                        email={this.props.contacts.email}
+                                    />
+                                </Col>
+                            ))
+                        }
+                    </Row>
                 </Content>
             </Wrapper>
         )

@@ -35,10 +35,6 @@ class App extends Component {
                                             {...props}
                                         />
                                 }/>
-                                {/*<Header*/}
-                                    {/*firstLoadedRoute={window.location.href.replace(/(.+\w\/)(.+)/,"/$2")}*/}
-                                    {/*contacts={contacts}*/}
-                                {/*/>*/}
                                 <Route exact path="/" component={() => <HomePage contacts={contacts} />} />
                                 <Route exact path="/about-us" component={AboutUsPage}/>
                                 <Route path="/contacts" component={() => <ContactsPage contacts={contacts}/> }/>
