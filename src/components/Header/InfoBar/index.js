@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
-import {FormGroup, FormControl, InputGroup, Glyphicon} from 'react-bootstrap';
+import Icon from 'material-ui/Icon';
+import {FormGroup, FormControl, InputGroup} from 'react-bootstrap';
 
 import {Wrapper, InfoA, IconSpan, InfoAForPhone} from './StyledComponents';
 
@@ -11,7 +12,7 @@ let searchText = '';
 const InfoBar = (props) => (
     <Wrapper>
         <div style={{ display: 'flex', justifyContent: 'center', width: '300px' }}>
-            <FormGroup style={{width: '200px', marginTop: '-2px'}}>
+            <FormGroup style={{width: '250px', marginTop: '-5px'}}>
                 <InputGroup>
                     <FormControl
                         type="text"
@@ -22,12 +23,23 @@ const InfoBar = (props) => (
                                 props.onSearch(searchText);
                             }
                         }}
+                        style={{
+                            borderRadius: '3px'
+                        }}
                     />
-                    <InputGroup.Addon
+                    <div
                         onClick={() => props.onSearch(searchText)}
+                        style={{ 
+                            width: '40px',
+                            alignItems: 'center',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            marginLeft: '-40px',
+                            zIndex: '123'
+                        }}
                     >
-                        <Glyphicon glyph="search" style={{cursor: 'pointer'}}/>
-                    </InputGroup.Addon>
+                        <Icon style={{fontSize: '30px', color: 'rgba(0,0,0,0.4)'}}>search</Icon>
+                    </div>
                 </InputGroup>
             </FormGroup>
         </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {bubble as MenuMobile} from 'react-burger-menu';
+import { bubble as MenuMobile } from 'react-burger-menu';
 // import Dialog, {DialogTitle} from 'material-ui/Dialog';
 // import IconButton from 'material-ui/IconButton';
 // import CloseIcon from 'material-ui-icons/Close';
-import {FormGroup, FormControl, InputGroup, Glyphicon} from 'react-bootstrap';
+import { FormGroup, FormControl, InputGroup } from 'react-bootstrap';
+import Icon from 'material-ui/Icon';
 import {
     Wrapper,
     Content,
@@ -112,7 +113,7 @@ class Header extends React.Component {
             brandData.forEach((brand, indexOfXColumn) => {
                 brand.name.toLowerCase().split(' ').forEach((word) => {
                     if (text === word) {
-                        searchResult.push({row: indexOfRow, col: indexOfXColumn});
+                        searchResult.push({ row: indexOfRow, col: indexOfXColumn });
                     }
                 });
             })
@@ -136,10 +137,10 @@ class Header extends React.Component {
 
     handleMenuOpenClose = () => {
         if (!this.state.isMenuOpen) {
-            this.setState({isMenuOpen: true});
+            this.setState({ isMenuOpen: true });
             this.handleBodyOverflowControl(true);
         } else {
-            this.setState({isMenuOpen: false});
+            this.setState({ isMenuOpen: false });
             this.handleBodyOverflowControl(false);
         }
 
@@ -169,61 +170,61 @@ class Header extends React.Component {
         return (
             <Wrapper>
                 {/*<Dialog*/}
-                    {/*onRequestClose={this.handleCloseSearchWindow}*/}
-                    {/*open={this.state.isSearchWindowOpen}*/}
-                    {/*fullScreen*/}
+                {/*onRequestClose={this.handleCloseSearchWindow}*/}
+                {/*open={this.state.isSearchWindowOpen}*/}
+                {/*fullScreen*/}
                 {/*>*/}
-                    {/*<DialogTitle*/}
-                        {/*style={{display: 'flex',}}*/}
-                    {/*>*/}
-                        {/*Search Results for <i>{this.state.searchText}</i>*/}
-                        {/*<IconButton*/}
-                            {/*aria-label="Close"*/}
-                            {/*style={{position: 'absolute', right: 0, marginTop: '-15px', marginRight: '5px'}}*/}
-                            {/*onClick={this.handleCloseSearchWindow}*/}
-                        {/*>*/}
-                            {/*<CloseIcon/>*/}
-                        {/*</IconButton>*/}
-                    {/*</DialogTitle>*/}
-                    {/*<div style={{*/}
-                        {/*height: '100%',*/}
-                        {/*width: '100%',*/}
-                        {/*display: 'flex',*/}
-                    {/*}}>*/}
-                        {/*<Grid>*/}
-                            {/*{*/}
-                                {/*this.state.searchResult ?*/}
-                                    {/*this.state.searchResult.map((brand, index) => {*/}
-                                        {/*const brandsRow = brandsData[brand.row];*/}
-                                        {/*const theBrand = brandsRow[brand.col];*/}
-                                        {/*return (*/}
-                                            {/*<Card3Column*/}
-                                                {/*image={theBrand.image}*/}
-                                                {/*key={index.toString()}*/}
-                                            {/*/>*/}
-                                        {/*)*/}
-                                    {/*})*/}
-                                    {/*:*/}
-                                    {/*(*/}
-                                        {/*<div>No Search result for {this.state.searchText}</div>*/}
-                                    {/*)*/}
-                            {/*}*/}
-                        {/*</Grid>*/}
-                    {/*</div>*/}
+                {/*<DialogTitle*/}
+                {/*style={{display: 'flex',}}*/}
+                {/*>*/}
+                {/*Search Results for <i>{this.state.searchText}</i>*/}
+                {/*<IconButton*/}
+                {/*aria-label="Close"*/}
+                {/*style={{position: 'absolute', right: 0, marginTop: '-15px', marginRight: '5px'}}*/}
+                {/*onClick={this.handleCloseSearchWindow}*/}
+                {/*>*/}
+                {/*<CloseIcon/>*/}
+                {/*</IconButton>*/}
+                {/*</DialogTitle>*/}
+                {/*<div style={{*/}
+                {/*height: '100%',*/}
+                {/*width: '100%',*/}
+                {/*display: 'flex',*/}
+                {/*}}>*/}
+                {/*<Grid>*/}
+                {/*{*/}
+                {/*this.state.searchResult ?*/}
+                {/*this.state.searchResult.map((brand, index) => {*/}
+                {/*const brandsRow = brandsData[brand.row];*/}
+                {/*const theBrand = brandsRow[brand.col];*/}
+                {/*return (*/}
+                {/*<Card3Column*/}
+                {/*image={theBrand.image}*/}
+                {/*key={index.toString()}*/}
+                {/*/>*/}
+                {/*)*/}
+                {/*})*/}
+                {/*:*/}
+                {/*(*/}
+                {/*<div>No Search result for {this.state.searchText}</div>*/}
+                {/*)*/}
+                {/*}*/}
+                {/*</Grid>*/}
+                {/*</div>*/}
                 {/*</Dialog>*/}
                 <MenuMobile
                     width='280px'
                     styles={styles}
                     isOpen={this.state.isMenuOpen}
                     onStateChange={(state) => {
-                        this.setState({isMenuOpen: state.isOpen});
+                        this.setState({ isMenuOpen: state.isOpen });
                         this.handleBodyOverflowControl(state.isOpen);
                     }}
                 >
                     <LogoLink to='/'>
-                        <img src={logo} alt='Brand And Stock Logo' style={{height: '56px'}}/>
+                        <img src={logo} alt='Brand And Stock Logo' style={{ height: '56px' }} />
                     </LogoLink>
-                    <FormGroup style={{width: '250px', marginTop: '10px'}}>
+                    <FormGroup style={{ width: '250px', marginTop: '0' }}>
                         <InputGroup>
                             <FormControl
                                 type="text"
@@ -234,12 +235,23 @@ class Header extends React.Component {
                                         this.handleSearch(this.searchText);
                                     }
                                 }}
+                                style={{
+                                    borderRadius: '3px'
+                                }}
                             />
-                            <InputGroup.Addon
+                            <div
                                 onClick={() => this.handleSearch(this.searchText)}
+                                style={{
+                                    width: '40px',
+                                    alignItems: 'center',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    marginLeft: '-40px',
+                                    zIndex: '123'
+                                }}
                             >
-                                <Glyphicon glyph="search" style={{cursor: 'pointer'}}/>
-                            </InputGroup.Addon>
+                                <Icon style={{ fontSize: '30px', color: 'rgba(0,0,0,0.4)' }}>search</Icon>
+                            </div>
                         </InputGroup>
                     </FormGroup>
                     {
@@ -254,7 +266,7 @@ class Header extends React.Component {
                             >
                                 {
                                     index === 1 ?
-                                        <a href={menuItem.link} style={{ color: 'black'}} download={priceList}>{menuItem.name}</a>
+                                        <a href={menuItem.link} style={{ color: 'black' }} download={priceList}>{menuItem.name}</a>
                                         :
                                         <LeftMenuLink
                                             to={menuItem.link}

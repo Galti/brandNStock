@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {IconButton} from 'material-ui';
-import DeleteIcon from 'material-ui-icons/Menu';
+import MenuIcon from 'material-ui-icons/Menu';
 import MdDrafts from 'react-icons/lib/md/drafts';
 import MdLocalPhone from 'react-icons/lib/md/local-phone';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
@@ -38,8 +38,8 @@ class Menu extends React.Component {
             <div>
                 <Wrapper>
                     <HamburgerButton>
-                        <IconButton aria-label="Delete" onClick={this.props.onMenuOpenClose}>
-                            <DeleteIcon style={{width: '30px', height: '30px'}}/>
+                        <IconButton onClick={this.props.onMenuOpenClose}>
+                            <MenuIcon style={{width: '30px', height: '30px'}}/>
                         </IconButton>
                     </HamburgerButton>
                     <Link to='/' style={{ zIndex: 100 }}>

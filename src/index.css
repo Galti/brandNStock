@@ -1,5 +1,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 @font-face {
     font-family: Propagan;
@@ -22,6 +23,7 @@
     padding: 0;
     text-decoration: none;
     outline: none;
+    outline-width: 0;
     font-size: 16px;
 }
 

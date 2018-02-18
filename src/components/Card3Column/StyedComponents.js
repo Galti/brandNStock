@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   max-width: 370px;
   position: relative;
   
-  
   @media (max-width: ${(props) => props.theme.BootstrapSizes.md}) {
     max-width: 300px;
   }
@@ -52,9 +51,9 @@ const Feature = styled.div`
   margin: 12px 0;
   transition-duration: ${(props) => props.theme.TransitionDuration};
   
-  &:hover {
-    color: ${(props) => props.theme.OrangeLayerRecommendedBrandNameHover};
-  }
+  // &:hover {
+  //   color: ${(props) => props.theme.OrangeLayerRecommendedBrandNameHover};
+  // }
 `;
 
 const Price = styled.div`

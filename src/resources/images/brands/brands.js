@@ -1114,7 +1114,7 @@ const brands = [
             gender: 'женский'
         },
         {
-            name: `BON\'A PARTE`,
+            name: `BON'A PARTE`,
             typology: 'одежда',
             age: '',
             price: '6,9',
