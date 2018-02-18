@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Col, Row} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import {
     Wrapper,
     AboutUsTitle,
@@ -21,7 +21,7 @@ class Footer extends React.Component {
         return (
             <Wrapper>
                 <WrapperFooterLogo>
-                    <img src={LogoLight} alt='Brand and Stock Logo' style={{width: '100%', marginTop: '-15px', opacity: '0.5'}}/>
+                    <img src={LogoLight} alt='Brand and Stock Logo' style={{ width: '100%', marginTop: '-15px', opacity: '0.5' }} />
                 </WrapperFooterLogo>
                 <Row>
                     <Col xs={12} sm={6} md={9}>
@@ -31,25 +31,23 @@ class Footer extends React.Component {
                         которую вы сможете приобрести оптом по самым выгодным ценам. Готовы ответить на все ваши вопросы
                         круглосуточно в любое удобное для вас время!
                     </Col>
-                    <Col xs={12} sm={6} md={3} style={{padding: '0 15px'}}>
+                    <Col xs={12} sm={6} md={3} style={{ padding: '0 15px' }}>
                         <ContactsTitle>
                             Контакты
                         </ContactsTitle>
                         <IconSpan>
-                            <MdDrafts/>
+                            <MdDrafts />
                         </IconSpan>
                         <a href={`mailto:${this.props.contacts.email}`}>{this.props.contacts.email}</a>
-                        <br/>
+                        <br />
                         <IconSpan>
-                            <MdLocalPhone/>
+                            <MdLocalPhone />
                         </IconSpan>
                         <a href={`tel:${this.props.contacts.phone}`}>{this.props.contacts.phone}</a>
                     </Col>
                 </Row>
-                <Row style={{padding: '20px 0'}}>
-                    <Copyright>Copyright © 2017 Brand and Stock.</Copyright>
-                    <Copyright>Made with Love by <b style={{ color: '#fff'}}><i>Fabrika</i></b>.</Copyright>
-                </Row>
+                <Copyright>Copyright © 2017 Brand and Stock.</Copyright>
+                <Copyright>Made with Love by <b style={{ color: '#fff' }}><i>Fabrika</i></b>.</Copyright>
             </Wrapper>
         )
     }

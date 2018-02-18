@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.TextColorMain};
   color: ${(props) => props.theme.BackgroundWhite};
   padding: 0 15px;
+  padding-bottom: 15px;
 `;
 
 const AboutUsTitle = styled.div`
@@ -23,10 +24,10 @@ const ContactsTitle = AboutUsTitle.extend`
   }
 `;
 
-
 const Copyright = styled.div`
   color: ${(props) => props.theme.SecondaryColor};
   text-align: center;
+  margin-top: 15px;
 `;
 
 const WrapperFooterLogo = styled.div`
